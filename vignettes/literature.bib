@@ -1,0 +1,1452 @@
+
+@ARTICLE{Azencott2007,
+  author =	 {Chloé-Agathe Azencott and Alexandre Ksikes and
+                  S. Joshua Swamidass and Jonathan H Chen and Liva
+                  Ralaivola and Pierre Baldi},
+  title =	 {One- to four-dimensional kernels for virtual
+                  screening and the prediction of physical, chemical,
+                  and biological properties.},
+  journal =	 {J Chem Inf Model},
+  year =	 2007,
+  volume =	 47,
+  pages =	 {965--974},
+  number =	 3,
+  abstract =	 {Many chemoinformatics applications, including
+                  high-throughput virtual screening, benefit from
+                  being able to rapidly predict the physical,
+                  chemical, and biological properties of small
+                  molecules to screen large repositories and identify
+                  suitable candidates. When training sets are
+                  available, machine learning methods provide an
+                  effective alternative to ab initio methods for these
+                  predictions. Here, we leverage rich molecular
+                  representations including 1D SMILES strings, 2D
+                  graphs of bonds, and 3D coordinates to derive
+                  efficient machine learning kernels to address
+                  regression problems. We further expand the library
+                  of available spectral kernels for small molecules
+                  developed for classification problems to include
+                  2.5D surface and 3D kernels using Delaunay
+                  tetrahedrization and other techniques from
+                  computational geometry, 3D pharmacophore kernels,
+                  and 3.5D or 4D kernels capable of taking into
+                  account multiple molecular configurations, such as
+                  conformers. The kernels are comprehensively tested
+                  using cross-validation and redundancy-reduction
+                  methods on regression problems using several
+                  available data sets to predict boiling points,
+                  melting points, aqueous solubility, octanol/water
+                  partition coefficients, and biological activity with
+                  state-of-the art results. When sufficient training
+                  data are available, 2D spectral kernels in general
+                  tend to yield the best and most robust results,
+                  better than state-of-the art. On data sets
+                  containing thousands of molecules, the kernels
+                  achieve a squared correlation coefficient of 0.91
+                  for aqueous solubility prediction and 0.94 for
+                  octanol/water partition coefficient prediction.
+                  Averaging over conformations improves the
+                  performance of kernels based on the
+                  three-dimensional structure of molecules, especially
+                  on challenging data sets. Kernel predictors for
+                  aqueous solubility (kSOL), LogP (kLOGP), and melting
+                  point (kMELT) are available over the Web through:
+                  http://cdb.ics.uci.edu.},
+  doi =		 {10.1021/ci600397p},
+  file =
+                  {Azencott2007.pdf:Azencott2007.pdf:PDF;Azencott2007.pdf:Azencott2007.pdf:PDF},
+  institution =	 {School of Information and Computer Sciences,
+                  University of California-Irvine, Irvine, California
+                  92697-3435, USA.},
+  keywords =	 {Alkanes, chemistry; Benzodiazepines,
+                  chemistry/pharmacology; Drug Evaluation,
+                  Preclinical, methods; Informatics, methods;
+                  Pharmaceutical Preparations, chemistry; Solubility;
+                  Transition Temperature},
+  language =	 {eng},
+  medline-pst =	 {ppublish},
+  owner =	 {Günter},
+  pmid =	 17338509,
+  timestamp =	 {2009.10.02},
+  url =		 {http://dx.doi.org/10.1021/ci600397p}
+}
+
+@ARTICLE{Bernazzani2006,
+  author =	 {Luca Bernazzani and Celia Duce and Alessio Micheli
+                  and Vincenzo Mollica and Alessandro Sperduti and
+                  Antonina Starita and Maria Rosaria Tiné},
+  title =	 {Predicting physical-chemical properties of compounds
+                  from molecular structures by recursive neural
+                  networks.},
+  journal =	 {J Chem Inf Model},
+  year =	 2006,
+  volume =	 46,
+  pages =	 {2030--2042},
+  number =	 5,
+  abstract =	 {In this paper, we report on the potential of a
+                  recently developed neural network for structures
+                  applied to the prediction of physical chemical
+                  properties of compounds. The proposed recursive
+                  neural network (RecNN) model is able to directly
+                  take as input a structured representation of the
+                  molecule and to model a direct and adaptive
+                  relationship between the molecular structure and
+                  target property. Therefore, it combines in a
+                  learning system the flexibility and general
+                  advantages of a neural network model with the
+                  representational power of a structured domain. As a
+                  result, a completely new approach to quantitative
+                  structure-activity relationship/quantitative
+                  structure-property relationship (QSPR/QSAR) analysis
+                  is obtained. An original representation of the
+                  molecular structures has been developed accounting
+                  for both the occurrence of specific atoms/groups and
+                  the topological relationships among them. Gibbs free
+                  energy of solvation in water, Delta(solv)G degrees ,
+                  has been chosen as a benchmark for the model. The
+                  different approaches proposed in the literature for
+                  the prediction of this property have been
+                  reconsidered from a general perspective. The
+                  advantages of RecNN as a suitable tool for the
+                  automatization of fundamental parts of the QSPR/QSAR
+                  analysis have been highlighted. The RecNN model has
+                  been applied to the analysis of the Delta(solv)G
+                  degrees in water of 138 monofunctional acyclic
+                  organic compounds and tested on an external data set
+                  of 33 compounds. As a result of the statistical
+                  analysis, we obtained, for the predictive accuracy
+                  estimated on the test set, correlation coefficient R
+                  = 0.9985, standard deviation S = 0.68 kJ mol(-1),
+                  and mean absolute error MAE = 0.46 kJ mol(-1).  The
+                  inherent ability of RecNN to abstract chemical
+                  knowledge through the adaptive learning process has
+                  been investigated by principal components analysis
+                  of the internal representations computed by the
+                  network. It has been found that the model recognizes
+                  the chemical compounds on the basis of a nontrivial
+                  combination of their chemical structure and target
+                  property.},
+  doi =		 {10.1021/ci060104e},
+  institution =	 {Dipartimento di Chimica e Chimica Industriale,
+                  Università di Pisa, Via Risorgimento 35, I-56126
+                  Pisa, Italy.},
+  language =	 {eng},
+  medline-pst =	 {ppublish},
+  owner =	 {Günter},
+  pmid =	 16995734,
+  timestamp =	 {2009.10.02},
+  url =		 {http://dx.doi.org/10.1021/ci060104e}
+}
+
+@Article{Bodenhofer2011,
+  title =	 {{APCluster: an R package for affinity propagation
+                  clustering}},
+  author =	 {Ulrich Bodenhofer and Andreas Kothmeier and Sepp
+                  Hochreiter},
+  journal =	 {Bioinformatics},
+  year =	 {2011},
+  volume =	 {27},
+  pages =	 {2463--2464},
+  doi =		 {10.1093/bioinformatics/btr406},
+}
+
+@ARTICLE{Borgwardt2005,
+  author =	 {K. M. Borgwardt, C. S. Ong, S. Schönauer,
+                  S. V. N. Vishwanathan, A. J. Smola, and H. Kriegel},
+  title =	 {Protein function prediction via graph kernels},
+  journal =	 {Proceedings of Intelligent Systems in Molecular
+                  Biology},
+  year =	 2005,
+  file =
+                  {Borgwardt2005.pdf:Borgwardt2005.pdf:PDF;Borgwardt2005.pdf:Borgwardt2005.pdf:PDF},
+  owner =	 {klambaue},
+  timestamp =	 {2009.10.29}
+}
+
+@ARTICLE{Ceroni2007,
+  author =	 {Alessio Ceroni and Fabrizio Costa and Paolo
+                  Frasconi},
+  title =	 {Classification of small molecules by two- and
+                  three-dimensional decomposition kernels.},
+  journal =	 {Bioinformatics},
+  year =	 2007,
+  volume =	 23,
+  pages =	 {2038--2045},
+  number =	 16,
+  month =	 {Aug},
+  __markedentry ={[Günter]},
+  abstract =	 {MOTIVATION: Several kernel-based methods have been
+                  recently introduced for the classification of small
+                  molecules. Most available kernels on molecules are
+                  based on 2D representations obtained from chemical
+                  structures, but far less work has focused so far on
+                  the definition of effective kernels that can also
+                  exploit 3D information. RESULTS: We introduce new
+                  ideas for building kernels on small molecules that
+                  can effectively use and combine 2D and 3D
+                  information. We tested these kernels in conjunction
+                  with support vector machines for binary
+                  classification on the 60 NCI cancer screening
+                  datasets as well as on the NCI HIV data set. Our
+                  results show that 3D information leveraged by these
+                  kernels can consistently improve prediction accuracy
+                  in all datasets. AVAILABILITY: An implementation of
+                  the small molecule classifier is available from
+                  http://www.dsi.unifi.it/neural/src/3DDK.},
+  doi =		 {10.1093/bioinformatics/btm298},
+  file =
+                  {Ceroni2007.pdf:Ceroni2007.pdf:PDF;Ceroni2007.pdf:Ceroni2007.pdf:PDF},
+  institution =	 {Machine Learning and Neural Networks Group,
+                  Dipartimento di Sistemi e Informatica, Universitá
+                  degli Studi di Firenze, Italy.},
+  keywords =	 {Algorithms; Amino Acid Sequence; Computer
+                  Simulation; Models, Chemical; Models, Molecular;
+                  Molecular Sequence Data; Neoplasm Proteins,
+                  chemistry/classification/ultrastructure; Neoplasms,
+                  metabolism; Pattern Recognition, Automated, methods;
+                  Protein Conformation; Sequence Analysis, Protein,
+                  methods; Tumor Markers, Biological, chemistry},
+  language =	 {eng},
+  medline-pst =	 {ppublish},
+  owner =	 {Günter},
+  pii =		 {btm298},
+  pmid =	 17550912,
+  timestamp =	 {2009.10.02},
+  url =		 {http://dx.doi.org/10.1093/bioinformatics/btm298}
+}
+
+@INPROCEEDINGS{Fober2009,
+  author =	 {Thomas Fober and Marco Mernberger and Vitalik
+                  Melnikov and Ralph Moritz and Eyke Hüllermeier},
+  title =	 {Extension and Empirical Comparison of Graph-Kernels
+                  for the Analysis of Protein Active Sites},
+  booktitle =	 {Lernen, Wissen, Adaptivität},
+  year =	 2009,
+  pages =	 {30-36},
+  file =	 {Fober2009.pdf:Fober2009.pdf:PDF}
+}
+
+@Article{Frey2007,
+  title =	 {Clustering by passing messages between data points},
+  author =	 {Brendan J. Frey and Delbert Dueck},
+  journal =	 {Science},
+  volume =	 {315},
+  pages =	 {972--977},
+  year =	 {2007},
+  doi =		 {10.1126/science.1136800},
+}
+
+@ARTICLE{Frohlich2005,
+  author =	 {Fr\"{o}hlich, Holger and Wegner, J\"{o}rg K. and
+                  Sieker, Florian and Zell, Andreas},
+  title =	 {Optimal assignment kernels for attributed molecular
+                  graphs},
+  year =	 2005,
+  pages =	 {225--232},
+  address =	 {New York, NY, USA},
+  booktitle =	 {ICML '05: Proceedings of the 22nd international
+                  conference on Machine learning},
+  doi =		 {http://doi.acm.org/10.1145/1102351.1102380},
+  isbn =	 {1-59593-180-5},
+  location =	 {Bonn, Germany},
+  publisher =	 {ACM}
+}
+
+@ARTICLE{Gartner2003,
+  author =	 {Gartner, T. and Flach, P. and Wrobel, S.},
+  title =	 {On graph kernels: Hardness results and efficient
+                  alternatives},
+  journal =	 {Lecture notes in computer science},
+  year =	 2003,
+  pages =	 {129--143},
+  citeulike-article-id =4630224,
+  keywords =	 {graph, kernels},
+  posted-at =	 {2009-05-25 14:09:19},
+  priority =	 2,
+  publisher =	 {Springer-Verlag; 1999}
+}
+
+@ARTICLE{Gaultier2009,
+  author =	 {Alban Gaultier and Xiaohua Wu and Natacha Le Moan
+                  and Shinako Takimoto and Gatambwa Mukandala and
+                  Katerina Akassoglou and W. Marie Campana and Steven
+                  L Gonias},
+  title =	 {Low-density lipoprotein receptor-related protein 1
+                  is an essential receptor for myelin phagocytosis.},
+  journal =	 {J Cell Sci},
+  year =	 2009,
+  volume =	 122,
+  pages =	 {1155--1162},
+  number =	 {Pt 8},
+  month =	 {Apr},
+  abstract =	 {Multiple sclerosis (MS) is an autoimmune disease in
+                  which myelin is progressively degraded. Because
+                  degraded myelin may both initiate and accelerate
+                  disease progression, clearing degraded myelin from
+                  extracellular spaces may be critical. In this study,
+                  we prepared myelin vesicles (MV) from rat brains as
+                  a model of degraded myelin.  Murine embryonic
+                  fibroblasts (MEFs) rapidly internalized MVs, which
+                  accumulated in lysosomes only when these cells
+                  expressed low-density lipoprotein receptor-related
+                  protein (LRP1). Receptor-associated protein (RAP),
+                  which binds LRP1 and inhibits interaction with other
+                  ligands, blocked MV uptake by LRP1-expressing
+                  MEFs. As a complementary approach, we prepared
+                  primary cultures of rat astrocytes, microglia and
+                  oligodendrocytes. All three cell types expressed
+                  LRP1 and mediated MV uptake, which was inhibited by
+                  RAP. LRP1 gene-silencing in oligodendrocytes also
+                  blocked MV uptake. Myelin basic protein (MBP), which
+                  was expressed as a recombinant protein, bound
+                  directly to LRP1. MBP-specific antibody inhibited MV
+                  uptake by oligodendrocytes. In experimental
+                  autoimmune encephalomyelitis in mice, LRP1 protein
+                  expression was substantially increased in the
+                  cerebellum and spinal cord. LRP1 colocalized with
+                  multiple CNS cell types. These studies establish
+                  LRP1 as a major receptor for phagocytosis of
+                  degraded myelin, which may function alone or in
+                  concert with co-receptors previously implicated in
+                  myelin phagocytosis.},
+  doi =		 {10.1242/jcs.040717},
+  institution =	 {Department of Pathology, University of California,
+                  San Diego, La Jolla, CA 92093, USA.},
+  keywords =	 {Animals; Animals, Newborn; Cells, Cultured; Central
+                  Nervous System; Cerebellum; Encephalomyelitis,
+                  Autoimmune, Experimental; Humans; LDL-Receptor
+                  Related Protein 1; Ligands; Lysosomes; Mice; Myelin
+                  Basic Proteins; Myelin Sheath; Neuroglia;
+                  Phagocytosis; RNA Interference; RNA, Small
+                  Interfering; Rats; Rats, Sprague-Dawley; Receptors,
+                  LDL; Spinal Cord; Transfection; Tumor Suppressor
+                  Proteins; rap GTP-Binding Proteins},
+  owner =	 {klambaue},
+  pii =		 {jcs.040717},
+  pmid =	 19299462,
+  timestamp =	 {2010.02.05},
+  url =		 {http://dx.doi.org/10.1242/jcs.040717}
+}
+
+@ARTICLE{Hattori2003,
+  author =	 {Masahiro Hattori and Yasushi Okuno and Susumu Goto
+                  and Minoru Kanehisa},
+  title =	 {Development of a chemical structure comparison
+                  method for integrated analysis of chemical and
+                  genomic information in the metabolic pathways.},
+  journal =	 {J Am Chem Soc},
+  year =	 2003,
+  volume =	 125,
+  pages =	 {11853--11865},
+  number =	 39,
+  month =	 {Oct},
+  abstract =	 {Cellular functions result from intricate networks of
+                  molecular interactions, which involve not only
+                  proteins and nucleic acids but also small chemical
+                  compounds. Here we present an efficient algorithm
+                  for comparing two chemical structures of compounds,
+                  where the chemical structure is treated as a graph
+                  consisting of atoms as nodes and covalent bonds as
+                  edges. On the basis of the concept of functional
+                  groups, 68 atom types (node types) are defined for
+                  carbon, nitrogen, oxygen, and other atomic species
+                  with different environments, which has enabled
+                  detection of biochemically meaningful
+                  features. Maximal common subgraphs of two graphs can
+                  be found by searching for maximal cliques in the
+                  association graph, and we have introduced heuristics
+                  to accelerate the clique finding and to detect
+                  optimal local matches (simply connected common
+                  subgraphs). Our procedure was applied to the
+                  comparison and clustering of 9383 compounds, mostly
+                  metabolic compounds, in the KEGG/LIGAND
+                  database. The largest clusters of similar compounds
+                  were related to carbohydrates, and the clusters
+                  corresponded well to the categorization of pathways
+                  as represented by the KEGG pathway map numbers. When
+                  each pathway map was examined in more detail, finer
+                  clusters could be identified corresponding to
+                  subpathways or pathway modules containing continuous
+                  sets of reaction steps. Furthermore, it was found
+                  that the pathway modules identified by similar
+                  compound structures sometimes overlap with the
+                  pathway modules identified by genomic contexts,
+                  namely, by operon structures of enzyme genes.},
+  doi =		 {10.1021/ja036030u},
+  file =
+                  {Hattori2003.pdf:Hattori2003.pdf:PDF;Hattori2003.pdf:Hattori2003.pdf:PDF},
+  institution =	 {Bioinformatics Center, Institute for Chemical
+                  Research, Kyoto University, Uji, Kyoto 611-0011,
+                  Japan.},
+  keywords =	 {Algorithms; Genome; Metabolism; Models, Biological;
+                  Models, Chemical; Models, Genetic;
+                  Structure-Activity Relationship},
+  language =	 {eng},
+  medline-pst =	 {ppublish},
+  owner =	 {Günter},
+  pmid =	 14505407,
+  timestamp =	 {2009.10.02},
+  url =		 {http://dx.doi.org/10.1021/ja036030u}
+}
+
+
+@ARTICLE{Hochreiter2006,
+  author =	 {Hochreiter, Sepp and Clevert, Djork-Arné and
+                  Obermayer, Klaus},
+  title =	 {{A new summarization method for affymetrix probe
+                  level data}},
+  journal =	 {Bioinformatics},
+  year =	 2006,
+  volume =	 22,
+  pages =	 {943-949},
+  number =	 8,
+  abstract =	 {Motivation: We propose a new model-based technique
+                  for summarizing high-density oligonucleotide array
+                  data at probe level for Affymetrix GeneChips. The
+                  new summarization method is based on a factor
+                  analysis model for which a Bayesian maximum a
+                  posteriori method optimizes the model parameters
+                  under the assumption of Gaussian measurement
+                  noise. Thereafter, the RNA concentration is
+                  estimated from the model.  In contrast to previous
+                  methods our new method called Factor Analysis
+                  for Robust Microarray Summarization (FARMS)
+                  supplies both P-values indicating interesting
+                  information and signal intensity values.Results: We
+                  compare FARMS on Affymetrix's spike-in and Gene
+                  Logic's dilution data to established algorithms like
+                  Affymetrix Microarray Suite (MAS) 5.0, Model Based
+                  Expression Index (MBEI), Robust Multi-array Average
+                  (RMA). Further, we compared FARMS with 43 other
+                  methods via the Affycomp II competition. The
+                  experimental results show that FARMS with default
+                  parameters outperforms previous methods if both
+                  sensitivity and specificity are simultaneously
+                  considered by the area under the receiver operating
+                  curve (AUC). We measured two quantities through the
+                  AUC: correctly detected expression changes versus
+                  wrongly detected (fold change) and correctly
+                  detected significantly different expressed genes in
+                  two sets of arrays versus wrongly detected
+                  (P-value). Furthermore FARMS is computationally less
+                  expensive then RMA, MAS and MBEI.Availability: The
+                  FARMS R package is available from
+                  http://www.bioinf.jku.at/software/farms/farms.htmlContact:hochreit@bioinf.jku.atSupplementary
+                  information:http://www.bioinf.jku.at/publications/papers/farms/supplementary.ps},
+  doi =		 {10.1093/bioinformatics/btl033},
+  eprint =
+                  {http://bioinformatics.oxfordjournals.org/content/22/8/943.full.pdf+html},
+  url =
+                  {http://bioinformatics.oxfordjournals.org/content/22/8/943.abstract}
+}
+
+@ARTICLE{Hochreiter2006,
+  author =	 {Sepp Hochreiter and Klaus Obermayer},
+  title =	 {Support vector machines for dyadic data.},
+  journal =	 {Neural Comput},
+  year =	 {2006},
+  volume =	 {18},
+  pages =	 {1472--1510},
+  number =	 {6},
+  month =	 {Jun},
+  abstract =	 {We describe a new technique for the analysis of
+                  dyadic data, where two sets of objects (row and
+                  column objects) are characterized by a matrix of
+                  numerical values that describe their mutual
+                  relationships.  The new technique, called potential
+                  support vector machine (P-SVM), is a large-margin
+                  method for the construction of classifiers and
+                  regression functions for the column
+                  objects. Contrary to standard support vector machine
+                  approaches, the P-SVM minimizes a scale-invariant
+                  capacity measure and requires a new set of
+                  constraints. As a result, the P-SVM method leads to
+                  a usually sparse expansion of the classification and
+                  regression functions in terms of the row rather than
+                  the column objects and can handle data and kernel
+                  matrices that are neither positive definite nor
+                  square. We then describe two complementary
+                  regularization schemes. The first scheme improves
+                  generalization performance for classification and
+                  regression tasks; the second scheme leads to the
+                  selection of a small, informative set of row support
+                  objects and can be applied to feature
+                  selection. Benchmarks for classification,
+                  regression, and feature selection tasks are
+                  performed with toy data as well as with several
+                  real-world data sets. The results show that the new
+                  method is at least competitive with but often
+                  performs better than the benchmarked standard
+                  methods for standard vectorial as well as true
+                  dyadic data sets. In addition, a theoretical
+                  justification is provided for the new approach.},
+  doi =		 {10.1162/neco.2006.18.6.1472},
+  institution =	 {Department of Electrical Engineering and Computer
+                  Science, Technische Universität, Berlin,
+                  Germany. hochreit@cs.tu-berlin.de},
+  keywords =	 {Artificial Intelligence; Databases, Genetic;
+                  Databases, Protein; Models, Theoretical;
+                  Oligonucleotide Array Sequence Analysis},
+  language =	 {eng},
+  medline-pst =	 {ppublish},
+  owner =	 {klambaue},
+  pmid =	 {16764511},
+  timestamp =	 {2011.04.29},
+  url =		 {http://dx.doi.org/10.1162/neco.2006.18.6.1472}
+}
+@ARTICLE{Hochreiter2006a,
+  author =	 {Sepp Hochreiter and Klaus Obermayer},
+  title =	 {Support vector machines for dyadic data.},
+  journal =	 {Neural Comput},
+  year =	 2006,
+  volume =	 18,
+  pages =	 {1472--1510},
+  number =	 6,
+  month =	 {Jun},
+  __markedentry ={[klambaue]},
+  abstract =	 {We describe a new technique for the analysis of
+                  dyadic data, where two sets of objects (row and
+                  column objects) are characterized by a matrix of
+                  numerical values that describe their mutual
+                  relationships.  The new technique, called potential
+                  support vector machine (P-SVM), is a large-margin
+                  method for the construction of classifiers and
+                  regression functions for the column
+                  objects. Contrary to standard support vector machine
+                  approaches, the P-SVM minimizes a scale-invariant
+                  capacity measure and requires a new set of
+                  constraints. As a result, the P-SVM method leads to
+                  a usually sparse expansion of the classification and
+                  regression functions in terms of the row rather than
+                  the column objects and can handle data and kernel
+                  matrices that are neither positive definite nor
+                  square. We then describe two complementary
+                  regularization schemes. The first scheme improves
+                  generalization performance for classification and
+                  regression tasks; the second scheme leads to the
+                  selection of a small, informative set of row support
+                  objects and can be applied to feature
+                  selection. Benchmarks for classification,
+                  regression, and feature selection tasks are
+                  performed with toy data as well as with several
+                  real-world data sets. The results show that the new
+                  method is at least competitive with but often
+                  performs better than the benchmarked standard
+                  methods for standard vectorial as well as true
+                  dyadic data sets. In addition, a theoretical
+                  justification is provided for the new approach.},
+  doi =		 {10.1162/neco.2006.18.6.1472},
+  institution =	 {Department of Electrical Engineering and Computer
+                  Science, Technische Universität, Berlin,
+                  Germany. hochreit@cs.tu-berlin.de},
+  keywords =	 {Artificial Intelligence; Databases, Genetic;
+                  Databases, Protein; Models, Theoretical;
+                  Oligonucleotide Array Sequence Analysis},
+  language =	 {eng},
+  medline-pst =	 {ppublish},
+  owner =	 {klambaue},
+  pmid =	 16764511,
+  timestamp =	 {2011.04.29},
+  url =		 {http://dx.doi.org/10.1162/neco.2006.18.6.1472}
+}
+
+@INPROCEEDINGS{Kashima2003,
+    author = {Hisashi Kashima and Koji Tsuda and Akihiro Inokuchi},
+    title = {Marginalized kernels between labeled graphs},
+    booktitle = {Proceedings of the Twentieth International Conference on Machine Learning},
+    year = {2003},
+    pages = {321--328},
+    publisher = {AAAI Press}
+}
+
+@INPROCEEDINGS{Kashima2004,
+  author =	 {H. Kashima and K. Tsuda and A. Inokuchi},
+  title =	 {Kernels for graphs},
+	booktitle = {Kernel Methods in Computational Biology},
+  year =	 {2004},
+	pages = {155--170},
+	publisher = {MIT Press},
+  timestamp =	 {2009.10.28}
+}
+
+
+@ARTICLE{Keiser2009,
+  author =	 {Michael J Keiser and Vincent Setola and John J Irwin
+                  and Christian Laggner and Atheir I Abbas and Sandra
+                  J Hufeisen and Niels H Jensen and Michael B Kuijer
+                  and Roberto C Matos and Thuy B Tran and Ryan Whaley
+                  and Richard A Glennon and Jérôme Hert and Kelan L H
+                  Thomas and Douglas D Edwards and Brian K Shoichet
+                  and Bryan L Roth},
+  title =	 {Predicting new molecular targets for known drugs.},
+  journal =	 {Nature},
+  year =	 2009,
+  volume =	 462,
+  pages =	 {175--181},
+  number =	 7270,
+  month =	 {Nov},
+  abstract =	 {Although drugs are intended to be selective, at
+                  least some bind to several physiological targets,
+                  explaining side effects and efficacy.  Because many
+                  drug-target combinations exist, it would be useful
+                  to explore possible interactions
+                  computationally. Here we compared 3,665 US Food and
+                  Drug Administration (FDA)-approved and
+                  investigational drugs against hundreds of targets,
+                  defining each target by its ligands.  Chemical
+                  similarities between drugs and ligand sets predicted
+                  thousands of unanticipated associations. Thirty were
+                  tested experimentally, including the antagonism of
+                  the beta(1) receptor by the transporter inhibitor
+                  Prozac, the inhibition of the 5-hydroxytryptamine
+                  (5-HT) transporter by the ion channel drug Vadilex,
+                  and antagonism of the histamine H(4) receptor by the
+                  enzyme inhibitor Rescriptor. Overall, 23 new
+                  drug-target associations were confirmed, five of
+                  which were potent (<100 nM). The physiological
+                  relevance of one, the drug N,N-dimethyltryptamine
+                  (DMT) on serotonergic receptors, was confirmed in a
+                  knockout mouse.  The chemical similarity approach is
+                  systematic and comprehensive, and may suggest
+                  side-effects and new indications for many drugs.},
+  doi =		 {10.1038/nature08506},
+  institution =	 {Department of Pharmaceutical Chemistry, University
+                  of California San Francisco, 1700 4th Street, San
+                  Francisco, California 94143-2550, USA.},
+  owner =	 {klambaue},
+  pii =		 {nature08506},
+  pmid =	 19881490,
+  timestamp =	 {2009.11.24},
+  url =		 {http://dx.doi.org/10.1038/nature08506}
+}
+
+@ARTICLE{Lafferty2002,
+  author =	 {Lafferty, John and Kondor, Risi Imre},
+  title =	 {Diffusion Kernels on Graphs and Other Discrete
+                  Structures},
+  year =	 2002,
+  file =
+                  {Lafferty2002.pdf:Lafferty2002.pdf:PDF;Lafferty2002.pdf:Lafferty2002.pdf:PDF},
+  owner =	 {klambaue},
+  timestamp =	 {2009.10.29}
+}
+
+
+
+@ARTICLE{Liu1997,
+  author =	 {Shuhui Liu and Ruisheng Zhang and Mancang Liu and
+                  Zhide Hu},
+  title =	 {Neural Network-Topological Indices Approach to the
+                  Prediction of Properties of Alkene},
+  journal =	 {Journal of Chemical Information and Computer
+                  Sciences},
+  year =	 1997,
+  volume =	 37,
+  pages =	 {1146-1151},
+  number =	 6,
+  bibsource =	 {DBLP, http://dblp.uni-trier.de},
+  ee =		 {http://dx.doi.org/10.1021/ci960107z},
+  file =
+                  {Liu1997.pdf:Liu1997.pdf:PDF;Liu1997.pdf:Liu1997.pdf:PDF},
+  owner =	 {Günter},
+  timestamp =	 {2009.10.02}
+}
+
+@INPROCEEDINGS{Mahe2004,
+  author = {Mah{\'e}, P. and Ueda, N. and Akutsu, T. and Perret, J.-L. and Vert,
+	J.-P.},
+  title = {Extensions of marginalized graph kernels},
+  booktitle = {Proc of the 21st {ICML}},
+  year = {2004},
+  editor = {Greiner, R. and Schuurmans, D.},
+  pages = {552-559},
+  publisher = {ACM Press},
+  abstract = {Positive definite kernels between labeled graphs have recently been
+	proposed.{T}hey enable the application of kernel methods, such as
+	support vectormachines, to the analysis and classification of graphs,
+	for example, chemicalcompounds. {T}hese graph kernels are obtained
+	by marginalizing a kernel betweenpaths with respect to a random walk
+	model on the graph vertices along theedges. {W}e propose two extensions
+	of these graph kernels, with the double goal toreduce their computation
+	time and increase their relevance as measure ofsimilarity between
+	graphs. {F}irst, we propose to modify the label of eachvertex by
+	automatically adding information about its environment with the useof
+	the {M}organ algorithm. {S}econd, we suggest a modification of the
+	random walkmodel to prevent the walk from coming back to a vertex
+	that was just visited.{T}hese extensions are then tested on benchmark
+	experiments of chemicalcompounds classification, with promising results.},
+}
+
+
+@ARTICLE{Mahe2005,
+  author = {Mah{\'e}, P. and Ueda, N. and Akutsu, T. and Perret, J.-L. and Vert,
+	J.-P.},
+  title = {Graph kernels for molecular structure-activity relationship analysis
+	with support vector machines.},
+  journal = {J. {C}hem. {I}nf. {M}odel.},
+  year = {2005},
+  volume = {45},
+  pages = {939-51},
+  number = {4},
+  abstract = {The support vector machine algorithm together with graph kernel functions
+	has recently been introduced to model structure-activity relationships
+	({SAR}) of molecules from their 2{D} structure, without the need
+	for explicit molecular descriptor computation. {W}e propose two extensions
+	to this approach with the double goal to reduce the computational
+	burden associated with the model and to enhance its predictive accuracy:
+	description of the molecules by a {M}organ index process and definition
+	of a second-order {M}arkov model for random walks on 2{D} structures.
+	{E}xperiments on two mutagenicity data sets validate the proposed
+	extensions, making this approach a possible complementary alternative
+	to other modeling strategies.},
+  doi = {10.1021/ci050039t},
+  url = {http://dx.doi.org/10.1021/ci050039t},
+}
+
+@ARTICLE{Mahe2006,
+  author =	 {Pierre Mah{\'e} and Liva Ralaivola and Véronique Stoven
+                  and Jean-Philippe Vert},
+  title =	 {The pharmacophore kernel for virtual screening with
+                  support vector machines.},
+  journal =	 {J Chem Inf Model},
+  year =	 2006,
+  volume =	 46,
+  pages =	 {2003--2014},
+  number =	 5,
+  abstract =	 {We introduce a family of positive definite kernels
+                  specifically optimized for the manipulation of 3D
+                  structures of molecules with kernel methods.  The
+                  kernels are based on the comparison of the
+                  three-point pharmacophores present in the 3D
+                  structures of molecules, a set of molecular features
+                  known to be particularly relevant for virtual
+                  screening applications.  We present a
+                  computationally demanding exact implementation of
+                  these kernels, as well as fast approximations
+                  related to the classical fingerprint-based
+                  approaches. Experimental results suggest that this
+                  new approach is competitive with state-of-the-art
+                  algorithms based on the 2D structure of molecules
+                  for the detection of inhibitors of several drug
+                  targets.},
+  doi =		 {10.1021/ci060138m},
+  file =
+                  {Mahe2006.pdf:Mahe2006.pdf:PDF;Mahe2006.pdf:Mahe2006.pdf:PDF},
+  institution =	 {35 rue Saint Honoré, 77305 Fontainebleau,
+                  France. pierre.mahe@ensmp.fr},
+  keywords =	 {Algorithms; Pharmaceutical Preparations},
+  language =	 {eng},
+  medline-pst =	 {ppublish},
+  owner =	 {Günter},
+  pmid =	 16995731,
+  timestamp =	 {2009.10.02},
+  url =		 {http://dx.doi.org/10.1021/ci060138m}
+}
+
+@article{Mahe2009a,
+ author = {Mah{\'e}, Pierre and Vert, Jean-Philippe},
+ title = {Graph kernels based on tree patterns for molecules},
+ journal = {Mach. Learn.},
+ issue_date = {April     2009},
+ volume = {75},
+ number = {1},
+ month = apr,
+ year = {2009},
+ issn = {0885-6125},
+ pages = {3--35},
+ numpages = {33},
+ url = {http://dx.doi.org/10.1007/s10994-008-5086-2},
+ doi = {10.1007/s10994-008-5086-2},
+ acmid = {1519209},
+ publisher = {Kluwer Academic Publishers},
+ address = {Hingham, MA, USA},
+ keywords = {Chemoinformatics, Graph kernels, Support vector machines},
+}
+
+@ARTICLE{Mahe2009b,
+  author = {Mah{\'e}, Pierre and Vert, Jean-Philippe},
+  title = {Virtual screening with support vector machines and structure kernels.},
+  journal = {Comb Chem High Throughput Screen},
+  year = {2009},
+  volume = {12},
+  pages = {409--423},
+  number = {4},
+  month = {May},
+  abstract = {Support vector machines and kernel methods have recently gained considerable
+	attention in chemoinformatics. They offer generally good performance
+	for problems of supervised classification or regression, and provide
+	a flexible and computationally efficient framework to include relevant
+	information and prior knowledge about the data and problems to be
+	handled. In particular, with kernel methods molecules do not need
+	to be represented and stored explicitly as vectors or fingerprints,
+	but only to be compared to each other through a comparison function
+	technically called a kernel. While classical kernels can be used
+	to compare vector or fingerprint representations of molecules, completely
+	new kernels were developed in the recent years to directly compare
+	the 2D or 3D structures of molecules, without the need for an explicit
+	vectorization step through the extraction of molecular descriptors.
+	While still in their infancy, these approaches have already demonstrated
+	their relevance on several toxicity prediction and structure-activity
+	relationship problems.},
+  file = {Mahe2009.pdf:Mahe2009.pdf:PDF;Mahe2009.pdf:Mahe2009.pdf:PDF},
+  institution = {Xerox Research Center Europe, 6 Chemin de Maupertuis, Meylan, France.},
+  keywords = {Algorithms; Artificial Intelligence; Computer Simulation; Databases,
+	Factual; Drug Evaluation, Preclinical, methods; Ligands; Pharmaceutical
+	Preparations, chemistry},
+  language = {eng},
+  medline-pst = {ppublish},
+  owner = {Günter},
+  pmid = {19442068},
+  timestamp = {2009.10.02}
+}
+
+@PHDTHESIS{MaheThesis,
+  author =	 {Mahé, Pierre},
+  title =	 {FONCTIONS NOYAUX POUR MOLECULES ET LEUR APPLICATION
+                  AU CRIBLAGE VIRTUEL PAR MACHINES A VECTEURS DE
+                  SUPPOR},
+  school =	 {lEcole des Mines de Paris},
+  year =	 2006,
+  file =
+                  {MaheThesis.pdf:MaheThesis.pdf:PDF;MaheThesis.pdf:MaheThesis.pdf:PDF},
+  owner =	 {klambaue},
+  timestamp =	 {2009.10.28}
+}
+
+@Article{Mahr2012,
+  author =	{Mahr, M. and Klambauer, G. and Hochreiter, S. },
+  title =	 {{Rchemcpp: An R package for computing the similarity of molecules}},
+  adress = {Institute of Bioinformatics, Johannes Kepler University Linz, Austria},
+  year =	 {2012},
+  journal =  {Unpublished},
+	volume = {},
+	pages  = {}
+}
+
+@Article{Mahe2007b,
+  author = {Mah{\'e}, Pierre and Perret, Jean-Luc and Tatsuya Akutsu and Vert, Jean-Philippe},
+  title =	 {{Chemcpp: A C++ toolbox for chemoinformatics focusing on the computation of kernel functions between chemical compounds}},
+  adress = {Ecole des Mines de Paris, France},
+  year =	 {2007},
+  journal =  {http://chemcpp.sourceforge.net/html/index.html},
+	volume = {},
+	pages  = {}
+}
+
+
+
+@ARTICLE{Martin2002,
+  author =	 {Yvonne C Martin and James L Kofron and Linda M
+                  Traphagen},
+  title =	 {Do structurally similar molecules have similar
+                  biological activity?},
+  journal =	 {J Med Chem},
+  year =	 2002,
+  volume =	 45,
+  pages =	 {4350--4358},
+  number =	 19,
+  month =	 {Sep},
+  abstract =	 {To design diverse combinatorial libraries or to
+                  select diverse compounds to augment a screening
+                  collection, computational chemists frequently reject
+                  compounds that are > or =0.85 similar to one already
+                  chosen for the combinatorial library or in the
+                  screening set. Using Daylight fingerprints, this
+                  report shows that for IC(50) values determined as a
+                  follow-up to 115 high-throughput screening assays,
+                  there is only a 30\% chance that a compound that is
+                  > or = 0.85 (Tanimoto) similar to an active is
+                  itself active. Although this enrichment is greater
+                  than that found with random screening and docking to
+                  three-dimensional structures, this low fraction of
+                  actives within similar compounds occurs not only
+                  because of deficiencies in the Daylight fingerprints
+                  and Tanimoto similarity calculations but also
+                  because similar compounds do not necessarily
+                  interact with the target macromolecule in similar
+                  ways. The current study emphasizes the statistical
+                  or probabilistic nature of library design and that
+                  perfect results cannot be expected.},
+  file =
+                  {Martin2002.pdf:Martin2002.pdf:PDF;Martin2002.pdf:Martin2002.pdf:PDF},
+  institution =	 {Global Pharmaceutical Research and Development,
+                  Abbott Laboratories, Abbott Park, IL 60064-6100,
+                  USA. yvonne.c.martin@abbott.com},
+  keywords =	 {Combinatorial Chemistry Techniques; Data
+                  Interpretation, Statistical; Databases, Factual;
+                  Enzyme Inhibitors, chemistry; Molecular Structure;
+                  Monoamine Oxidase Inhibitors, chemistry;
+                  Quantitative Structure-Activity Relationship},
+  language =	 {eng},
+  medline-pst =	 {ppublish},
+  owner =	 {Günter},
+  pii =		 {jm020155c},
+  pmid =	 12213076,
+  timestamp =	 {2009.10.02}
+}
+
+@INPROCEEDINGS{Menchetti2005,
+  author =	 {Sauro Menchetti and Fabrizio Costa and Paolo
+                  Frasconi},
+  title =	 {{W}eighted {D}ecomposition {K}ernels},
+  booktitle =	 {Machine Learning, Proceedings of the $22^{th}$
+                  International Conference (ICML 2005), Bonn, Germany,
+                  August 7--11, 2005},
+  year =	 2005,
+  editor =	 {Luc De Raedt and Stefan Wrobel},
+  volume =	 119,
+  pages =	 {585--592},
+  address =	 {New York, {NY}, {USA}},
+  month =	 {August 7--11},
+  organization = {{ICML} 2005},
+  publisher =	 {{ACM} Press},
+  doi =		 {http://doi.acm.org/10.1145/1102351.1102425},
+  file =	 {Menchetti2005.pdf:Menchetti2005.pdf:PDF},
+  isbn =	 {1-59593-180-5}
+}
+
+@ARTICLE{Micheli2007,
+  author =	 {Alessio Micheli and Alessandro Sperduti and Antonina
+                  Starita},
+  title =	 {An introduction to recursive neural networks and
+                  kernel methods for cheminformatics.},
+  journal =	 {Curr Pharm Des},
+  year =	 2007,
+  volume =	 13,
+  pages =	 {1469--1495},
+  number =	 14,
+  abstract =	 {The aim of this paper is to introduce the reader to
+                  new developments in Neural Networks and Kernel
+                  Machines concerning the treatment of structured
+                  domains. Specifically, we discuss the research on
+                  these relatively new models to introduce a novel and
+                  more general approach to QSPR/QSAR analysis. The
+                  focus is on the computational side and not on the
+                  experimental one.},
+  institution =	 {Dipartimento di Informatica, Università di Pisa,
+                  Largo B. Pontecorvo 3, Pisa,
+                  Italy. micheli@di.unipi.it},
+  keywords =	 {Chemistry, Pharmaceutical, methods; Mathematics;
+                  Neural Networks (Computer); Numerical Analysis,
+                  Computer-Assisted; Quantitative Structure-Activity
+                  Relationship},
+  language =	 {eng},
+  medline-pst =	 {ppublish},
+  owner =	 {Günter},
+  pmid =	 17504168,
+  timestamp =	 {2009.10.02}
+}
+
+@CONFERENCE{Vert2007Presentation,
+  author = {Vert, Jean P.},
+  title = {Graph kernels and applications in chemoinformatics},
+  booktitle = {{International Workshop on Graph-based Representations in
+Pattern Recognition (Gbr 2007), Alicante, Spain, June 13, 2007}},
+  year = {2007},
+  file = {Vert2007Presentation.pdf:Vert2007Presentation.pdf:PDF;Vert2007Presentation.pdf:Vert2007Presentation.pdf:PDF},
+  owner = {klambaue},
+  timestamp = {2009.10.28}
+}
+
+@ARTICLE{Mohr2010,
+  author =	 {Johannes Mohr and Brijnesh Jain and Andreas Sutter
+                  and Antonius Ter Laak and Thomas Steger-Hartmann and
+                  Nikolaus Heinrich and Klaus Obermayer},
+  title =	 {A maximum common subgraph kernel method for
+                  predicting the chromosome aberration test.},
+  journal =	 {J Chem Inf Model},
+  year =	 {2010},
+  volume =	 {50},
+  pages =	 {1821--1838},
+  number =	 {10},
+  month =	 {Oct},
+  abstract =	 {The chromosome aberration test is frequently used
+                  for the assessment of the potential of chemicals and
+                  drugs to elicit genetic damage in mammalian cells in
+                  vitro. Due to the limitations of experimental
+                  genotoxicity testing in early drug discovery phases,
+                  a model to predict the chromosome aberration test
+                  yielding high accuracy and providing guidance for
+                  structure optimization is urgently needed. In this
+                  paper, we describe a machine learning approach for
+                  predicting the outcome of this assay based on the
+                  structure of the investigated compound.  The novelty
+                  of the proposed method consists in combining a
+                  maximum common subgraph kernel for measuring the
+                  similarity of two chemical graphs with the potential
+                  support vector machine for classification.  In
+                  contrast to standard support vector machine
+                  classifiers, the proposed approach does not provide
+                  a black box model but rather allows to visualize
+                  structural elements with high positive or negative
+                  contribution to the class decision. In order to
+                  compare the performance of different methods for
+                  predicting the outcome of the chromosome aberration
+                  test, we compiled a large data set exhibiting high
+                  quality, reliability, and consistency from public
+                  sources and configured a fixed cross-validation
+                  protocol, which we make publicly available. In a
+                  comparison to standard methods currently used in
+                  pharmaceutical industry as well as to other graph
+                  kernel approaches, the proposed method achieved
+                  significantly better performance.},
+  doi =		 {10.1021/ci900367j},
+  institution =	 {School for Electrical Engineering and Computer
+                  Science, Berlin Institute of Technology, Berlin,
+                  Germany. johann@cs.tu-berlin.de},
+  language =	 {eng},
+  medline-pst =	 {ppublish},
+  owner =	 {klambaue},
+  pmid =	 {20883013},
+  timestamp =	 {2010.12.14},
+  url =		 {http://dx.doi.org/10.1021/ci900367j}
+}
+
+
+
+@ARTICLE{PratimRoy2009,
+  author =	 {Pratim Roy, Partha and Paul, Somnath and Mitra,
+                  Indrani and Roy, Kunal},
+  title =	 {On Two Novel Parameters for Validation of Predictive
+                  QSAR Models},
+  journal =	 {Molecules},
+  year =	 2009,
+  volume =	 14,
+  pages =	 {1660--1701},
+  number =	 5,
+  doi =		 {10.3390/molecules14051660},
+  issn =	 {1420-3049},
+  owner =	 {Günter},
+  pubmedid =	 19471190,
+  timestamp =	 {2009.10.02},
+  url =		 {http://www.mdpi.com/1420-3049/14/5/1660}
+}
+
+
+
+@ARTICLE{Ralaivola2005,
+  author = {Liva Ralaivola and Sanjay J Swamidass and Hiroto Saigo and Pierre
+	Baldi},
+  title = {Graph kernels for chemical informatics.},
+  journal = {Neural Netw},
+  year = {2005},
+  volume = {18},
+  pages = {1093--1110},
+  number = {8},
+  month = {Oct},
+  abstract = {Increased availability of large repositories of chemical compounds
+	is creating new challenges and opportunities for the application
+	of machine learning methods to problems in computational chemistry
+	and chemical informatics. Because chemical compounds are often represented
+	by the graph of their covalent bonds, machine learning methods in
+	this domain must be capable of processing graphical structures with
+	variable size. Here, we first briefly review the literature on graph
+	kernels and then introduce three new kernels (Tanimoto, MinMax, Hybrid)
+	based on the idea of molecular fingerprints and counting labeled
+	paths of depth up to d using depth-first search from each possible
+	vertex. The kernels are applied to three classification problems
+	to predict mutagenicity, toxicity, and anti-cancer activity on three
+	publicly available data sets. The kernels achieve performances at
+	least comparable, and most often superior, to those previously reported
+	in the literature reaching accuracies of 91.5\% on the Mutag dataset,
+	65-67\% on the PTC (Predictive Toxicology Challenge) dataset, and
+	72\% on the NCI (National Cancer Institute) dataset. Properties and
+	tradeoffs of these kernels, as well as other proposed kernels that
+	leverage 1D or 3D representations of molecules, are briefly discussed.},
+  doi = {10.1016/j.neunet.2005.07.009},
+  file = {Ralaivola2005.pdf:Ralaivola2005.pdf:PDF;Ralaivola2005.pdf:Ralaivola2005.pdf:PDF},
+  institution = {School of Information and Computer Sciences, University of California,
+	Irvine, CA 92697-3425, USA.},
+  keywords = {Anticarcinogenic Agents; Artificial Intelligence; Computer Graphics;
+	Databases, Genetic; Drug Toxicity; Information Storage and Retrieval;
+	National Practitioner Data Bank; Pattern Recognition, Automated;
+	Sequence Analysis, Protein; Structure-Activity Relationship; United
+	States; emical},
+  language = {eng},
+  medline-pst = {ppublish},
+  owner = {Günter},
+  pii = {S0893-6080(05)00169-3},
+  pmid = {16157471},
+  timestamp = {2009.10.02},
+  url = {http://dx.doi.org/10.1016/j.neunet.2005.07.009}
+}
+@INPROCEEDINGS{Ramon2003,
+  author =	 {J. Ramon and T. Gärtner},
+  title =	 {Expressivity versus efficiency of graph kernels},
+  booktitle =	 {Proceedings of the First International Workshop on Mining Graphs, Trees and Sequences},
+  year =	 2003,
+  pages =	 {65-74},
+}
+
+@ARTICLE{Rosenbaum2011,
+  author =	 {Lars Rosenbaum and Georg Hinselmann and Andreas Jahn
+                  and Andreas Zell},
+  title =	 {Interpreting linear support vector machine models
+                  with heat map molecule coloring.},
+  journal =	 {J Cheminform},
+  year =	 2011,
+  volume =	 3,
+  pages =	 11,
+  number =	 1,
+  abstract =	 {ABSTRACT:Model-based virtual screening plays an
+                  important role in the early drug discovery
+                  stage. The outcomes of high-throughput screenings
+                  are a valuable source for machine learning
+                  algorithms to infer such models. Besides a strong
+                  performance, the interpretability of a machine
+                  learning model is a desired property to guide the
+                  optimization of a compound in later drug discovery
+                  stages. Linear support vector machines showed to
+                  have a convincing performance on large-scale data
+                  sets. The goal of this study is to present a heat
+                  map molecule coloring technique to interpret linear
+                  support vector machine models. Based on the weights
+                  of a linear model, the visualization approach colors
+                  each atom and bond of a compound according to its
+                  importance for activity.We evaluated our approach on
+                  a toxicity data set, a chromosome aberration data
+                  set, and the maximum unbiased validation data sets.
+                  The experiments show that our method sensibly
+                  visualizes structure-property and structure-activity
+                  relationships of a linear support vector machine
+                  model. The coloring of ligands in the binding pocket
+                  of several crystal structures of a maximum unbiased
+                  validation data set target indicates that our
+                  approach assists to determine the correct ligand
+                  orientation in the binding pocket. Additionally, the
+                  heat map coloring enables the identification of
+                  substructures important for the binding of an
+                  inhibitor.In combination with heat map coloring,
+                  linear support vector machine models can help to
+                  guide the modification of a compound in later stages
+                  of drug discovery. Particularly substructures
+                  identified as important by our method might be a
+                  starting point for optimization of a lead
+                  compound. The heat map coloring should be considered
+                  as complementary to structure based modeling
+                  approaches. As such, it helps to get a better
+                  understanding of the binding mode of an inhibitor.},
+  doi =		 {10.1186/1758-2946-3-11},
+  institution =	 {University of Tübingen, Center for Bioinformatics
+                  (ZBIT), Sand 1, 72076 Tübingen,
+                  Germany. lars.rosenbaum@uni-tuebingen.de.},
+  language =	 {eng},
+  medline-pst =	 {epublish},
+  owner =	 {klambaue},
+  pii =		 {1758-2946-3-11},
+  pmid =	 21439031,
+  timestamp =	 {2011.04.29},
+  url =		 {http://dx.doi.org/10.1186/1758-2946-3-11}
+}
+
+
+@ARTICLE{Roy2009,
+  author =	 {Partha Pratim Roy and Somnath Paul and Indrani Mitra
+                  and Kunal Roy},
+  title =	 {On two novel parameters for validation of predictive
+                  QSAR models.},
+  journal =	 {Molecules},
+  year =	 2009,
+  volume =	 14,
+  pages =	 {1660--1701},
+  number =	 5,
+  abstract =	 {Validation is a crucial aspect of quantitative
+                  structure-activity relationship (QSAR) modeling. The
+                  present paper shows that traditionally used
+                  validation parameters (leave-one-out Q(2) for
+                  internal validation and predictive R(2) for external
+                  validation) may be supplemented with two novel
+                  parameters r(m)(2) and R(p)(2) for a stricter test
+                  of validation. The parameter r(m)(2)((overall))
+                  penalizes a model for large differences between
+                  observed and predicted values of the compounds of
+                  the whole set (considering both training and test
+                  sets) while the parameter R(p)(2) penalizes model
+                  R(2) for large differences between determination
+                  coefficient of nonrandom model and square of mean
+                  correlation coefficient of random models in case of
+                  a randomization test. Two other variants of r(m)(2)
+                  parameter, r(m)(2)((LOO)) and r(m)(2)((test)),
+                  penalize a model more strictly than Q(2) and
+                  R(2)(pred) respectively. Three different data sets
+                  of moderate to large size have been used to develop
+                  multiple models in order to indicate the suitability
+                  of the novel parameters in QSAR studies. The results
+                  show that in many cases the developed models could
+                  satisfy the requirements of conventional parameters
+                  (Q(2) and R(2)(pred)) but fail to achieve the
+                  required values for the novel parameters r(m)(2) and
+                  R(p)(2).  Moreover, these parameters also help in
+                  identifying the best models from among a set of
+                  comparable models. Thus, a test for these two
+                  parameters is suggested to be a more stringent
+                  requirement than the traditional validation
+                  parameters to decide acceptability of a predictive
+                  QSAR model, especially when a regulatory decision is
+                  involved.},
+  doi =		 {10.3390/molecules14051660},
+  file =
+                  {Roy2009.pdf:Roy2009.pdf:PDF;Roy2009.pdf:Roy2009.pdf:PDF},
+  institution =	 {Department of Pharmaceutical Technology, Division of
+                  Medicinal and Pharmaceutical Chemistry, Drug
+                  Theoretics and Cheminformatics Lab, Jadavpur
+                  University, Kolkata,
+                  India. partha_chemju@yahoo.co.in},
+  keywords =	 {Algorithms; Animals; Molecular Structure; Organic
+                  Chemicals, chemistry/pharmacology; Quantitative
+                  Structure-Activity Relationship; Receptors, CCR5,
+                  chemistry; Reproducibility of Results; Software;
+                  Tetrahymena pyriformis, drug effects/metabolism; ls,
+                  Chemical},
+  language =	 {eng},
+  medline-pst =	 {epublish},
+  owner =	 {Günter},
+  pii =		 14051660,
+  pmid =	 19471190,
+  timestamp =	 {2009.10.02},
+  url =		 {http://dx.doi.org/10.3390/molecules14051660}
+}
+
+
+@ARTICLE{Schietgat2008,
+  author =	 {Schietgat, Leander and Jan Ramon and Maurice
+                  Bruynooghe and Hendrik Blockeel},
+  title =	 {An Efficiently Computable Graph-Based Metric for the
+                  Classification of Small Molecules},
+  journal =	 {??},
+  year =	 2008,
+  file =
+                  {Schietgat2008.pdf:Schietgat2008.pdf:PDF;Schietgat2008.pdf:Schietgat2008.pdf:PDF},
+  owner =	 {klambaue},
+  timestamp =	 {2009.10.28}
+}
+
+
+@INPROCEEDINGS{Schietgat2009,
+  author =	 {Schietgat},
+  title =	 {Maximum Common Subgraph Mining: A Fast and Effective
+                  Approach towards Feature Generation},
+  year =	 2009,
+  file =
+                  {Schietgat2009.pdf:Schietgat2009.pdf:PDF;Schietgat2009.pdf:Schietgat2009.pdf:PDF},
+  owner =	 {klambaue},
+  timestamp =	 {2009.10.28}
+}
+
+@ARTICLE{Sheridan1998,
+  author =	 {Sheridan, Robert P. and Miller, Michael D.},
+  title =	 {A Method for Visualizing Recurrent Topological
+                  Substructures in Sets of Active Molecules},
+  journal =	 {Journal of Chemical Information and Computer
+                  Sciences},
+  year =	 1998,
+  volume =	 38,
+  pages =	 {915-924},
+  file =
+                  {Sheridan1998.pdf:Sheridan1998.pdf:PDF;Sheridan1998.pdf:Sheridan1998.pdf:PDF},
+  owner =	 {klambaue},
+  timestamp =	 {2009.10.28}
+}
+
+@ARTICLE{Smola2003,
+  author =	 {Smola, Alexander J. and Kondor, Risi Imre},
+  title =	 {Kernels and Regularization on Graphs},
+  year =	 2003,
+  file =
+                  {Smola2003.pdf:Smola2003.pdf:PDF;Smola2003.pdf:Smola2003.pdf:PDF},
+  owner =	 {klambaue},
+  timestamp =	 {2009.10.29}
+} 
+
+
+@ARTICLE{Swamidass2005,
+  author =	 {S. Joshua Swamidass and Jonathan Chen and Jocelyne
+                  Bruand and Peter Phung and Liva Ralaivola and Pierre
+                  Baldi},
+  title =	 {Kernels for small molecules and the prediction of
+                  mutagenicity, toxicity and anti-cancer activity.},
+  journal =	 {Bioinformatics},
+  year =	 2005,
+  volume =	 {21 Suppl 1},
+  pages =	 {i359--i368},
+  month =	 {Jun},
+  abstract =	 {MOTIVATION: Small molecules play a fundamental role
+                  in organic chemistry and biology. They can be used
+                  to probe biological systems and to discover new
+                  drugs and other useful compounds. As increasing
+                  numbers of large datasets of small molecules become
+                  available, it is necessary to develop computational
+                  methods that can deal with molecules of variable
+                  size and structure and predict their physical,
+                  chemical and biological properties. RESULTS: Here we
+                  develop several new classes of kernels for small
+                  molecules using their 1D, 2D and 3D representations.
+                  In 1D, we consider string kernels based on SMILES
+                  strings. In 2D, we introduce several similarity
+                  kernels based on conventional or generalized
+                  fingerprints. Generalized fingerprints are derived
+                  by counting in different ways subpaths contained in
+                  the graph of bonds, using depth-first searches. In
+                  3D, we consider similarity measures between
+                  histograms of pairwise distances between atom
+                  classes. These kernels can be computed efficiently
+                  and are applied to problems of classification and
+                  prediction of mutagenicity, toxicity and anti-cancer
+                  activity on three publicly available datasets. The
+                  results derived using cross-validation methods are
+                  state-of-the-art. Tradeoffs between various kernels
+                  are briefly discussed. AVAILABILITY: Datasets
+                  available from
+                  http://www.igb.uci.edu/servers/servers.html},
+  doi =		 {10.1093/bioinformatics/bti1055},
+  file =
+                  {Swamidass2005.pdf:Swamidass2005.pdf:PDF;Swamidass2005.pdf:Swamidass2005.pdf:PDF},
+  institution =	 {Institute for Genomics and Bioinformatics, School of
+                  Information and Computer Sciences, University of
+                  California Irvine, CA, USA.},
+  keywords =	 {Animals; Antineoplastic Agents, pharmacology;
+                  Computational Biology, methods; Computer Simulation;
+                  Databases, Factual; Drug Toxicity; Female; Male;
+                  Mice; Models, Molecular; Models, Statistical;
+                  Mutagens; Neoplasms, pathology; Pattern Recognition,
+                  Automated; ROC Curve; Rats},
+  language =	 {eng},
+  medline-pst =	 {ppublish},
+  owner =	 {Günter},
+  pii =		 {21/suppl_1/i359},
+  pmid =	 15961479,
+  timestamp =	 {2009.10.02},
+  url =		 {http://dx.doi.org/10.1093/bioinformatics/bti1055}
+}
+
+
+
+
+@ARTICLE{Vert2007,
+  author =	 {Jean-Philippe Vert and Jian Qiu and William S Noble},
+  title =	 {A new pairwise kernel for biological network
+                  inference with support vector machines.},
+  journal =	 {BMC Bioinformatics},
+  year =	 2007,
+  volume =	 {8 Suppl 10},
+  pages =	 {S8},
+  abstract =	 {BACKGROUND: Much recent work in bioinformatics has
+                  focused on the inference of various types of
+                  biological networks, representing gene regulation,
+                  metabolic processes, protein-protein interactions,
+                  etc.  A common setting involves inferring network
+                  edges in a supervised fashion from a set of
+                  high-confidence edges, possibly characterized by
+                  multiple, heterogeneous data sets (protein sequence,
+                  gene expression, etc.). RESULTS: Here, we
+                  distinguish between two modes of inference in this
+                  setting: direct inference based upon similarities
+                  between nodes joined by an edge, and indirect
+                  inference based upon similarities between one pair
+                  of nodes and another pair of nodes. We propose a
+                  supervised approach for the direct case by
+                  translating it into a distance metric learning
+                  problem. A relaxation of the resulting convex
+                  optimization problem leads to the support vector
+                  machine (SVM) algorithm with a particular kernel for
+                  pairs, which we call the metric learning pairwise
+                  kernel. This new kernel for pairs can easily be used
+                  by most SVM implementations to solve problems of
+                  supervised classification and inference of pairwise
+                  relationships from heterogeneous data.  We
+                  demonstrate, using several real biological networks
+                  and genomic datasets, that this approach often
+                  improves upon the state-of-the-art SVM for indirect
+                  inference with another pairwise kernel, and that the
+                  combination of both kernels always improves upon
+                  each individual kernel. CONCLUSION: The metric
+                  learning pairwise kernel is a new formulation to
+                  infer pairwise relationships with SVM, which
+                  provides state-of-the-art results for the inference
+                  of several biological networks from heterogeneous
+                  genomic data.},
+  doi =		 {S8},
+  institution =	 {Centre for Computational Biology, Ecole des Mines de
+                  Paris, 35 rue Saint-Honoré, 77300 Fontainebleau,
+                  France. Jean-Philippe.Vert@ensmp.fr},
+  keywords =	 {Algorithms; Gene Expression Profiling; Metabolic
+                  Networks and Pathways, physiology; Models,
+                  Statistical; Saccharomyces cerevisiae Proteins,
+                  genetics/metabolism; Saccharomyces cerevisiae,
+                  chemistry/metabolism; Signal Transduction, genetics;
+                  Systems Biology, methods/statistics /&/ numerical
+                  data},
+  language =	 {eng},
+  medline-pst =	 {ppublish},
+  owner =	 {Günter},
+  pii =		 {1471-2105-8-S10-S8},
+  pmid =	 18269702,
+  timestamp =	 {2009.10.02},
+  url =		 {http://dx.doi.org/S8}
+}
+
+
+
+
+
+@ARTICLE{Vish2008,
+  author =	 {Vishwanathan, S. V. N.},
+  title =	 {Graph Kernels},
+  journal =	 {Journal of Machine Learning Research},
+  year =	 2008,
+  volume =	 9,
+  pages =	 {1-41},
+  owner =	 {klambaue},
+  timestamp =	 {2009.10.29}
+}
+
+
+
+@ARTICLE{Wegner2006,
+  author =	 {Wegner, J. K. and H. Fröhlich and H. Mielenz and
+                  A. Zell},
+  title =	 {Data and Graph Mining in Chemical Space for ADME and
+                  Activity Data Sets},
+  journal =	 {QSAR Comb. Sci.},
+  year =	 2006,
+  volume =	 25,
+  pages =	 {205-220},
+  file =
+                  {Wegner2006.pdf:Wegner2006.pdf:PDF;Wegner2006.pdf:Wegner2006.pdf:PDF},
+  owner =	 {klambaue},
+  timestamp =	 {2009.10.28}
+}
+
+@ARTICLE{Yao2004,
+  author =	 {Xiaojun Yao and Annick Panaye and Jean-Pierre Doucet
+                  and Ruisheng Zhang and Haifeng Chen and Mancang Liu
+                  and Zhide Hu and Bo Tao Fan},
+  title =	 {Comparative Study of QSAR/QSPR Correlations Using
+                  Support Vector Machines, Radial Basis Function
+                  Neural Networks, and Multiple Linear Regression},
+  journal =	 {Journal of Chemical Information and Modeling},
+  year =	 2004,
+  volume =	 44,
+  pages =	 {1257-1266},
+  number =	 4,
+  bibsource =	 {DBLP, http://dblp.uni-trier.de},
+  ee =		 {http://dx.doi.org/10.1021/ci049965i},
+  owner =	 {Günter},
+  timestamp =	 {2009.10.02}
+}
+
+
+
+@article{Mortelmans2000,
+title = "The Ames Salmonella/microsome mutagenicity assay ",
+journal = "Mutation Research/Fundamental and Molecular Mechanisms of Mutagenesis ",
+volume = "455",
+number = "1–2",
+pages = "29 - 60",
+year = "2000",
+note = "",
+issn = "0027-5107",
+doi = "http://dx.doi.org/10.1016/S0027-5107(00)00064-6",
+url = "http://www.sciencedirect.com/science/article/pii/S0027510700000646",
+author = "Kristien Mortelmans and Errol Zeiger"
+}

@@ -1,0 +1,478 @@
+\documentclass[article]{bioinf}
+
+\usepackage[noae]{Sweave}
+\usepackage{amsmath,amssymb}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage[authoryear]{natbib}
+
+\hypersetup{colorlinks=false,
+   pdfborder=0 0 0,
+   pdftitle={Rchemcpp -- Similarity measures for chemical compounds},
+   pdfauthor={G\"unter Klambauer}}
+
+\title{Rchemcpp -- Similarity measures for chemical compounds}
+\author{Michael Mahr and G\"unter Klambauer}
+\affiliation{Institute of Bioinformatics, Johannes Kepler University
+Linz\\Altenberger Str. 69, 4040 Linz, Austria\\
+\email{klambauer@bioinf.jku.at}}
+
+%\VignetteIndexEntry{Rchemcpp}
+%\VignetteKeywords{Kernel, kernels, graph, graphs, similarity, molecules, compounds}
+
+
+
+\newcommand{\Rchemcpp}{\texttt{Rchemcpp}}
+\newcommand{\method}[1]{{\fontfamily{phv}\fontshape{rm}\selectfont #1}}
+\newcommand{\R}{R}
+\newcommand{\Real}{\mathbb{R}}
+
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+\setkeys{Gin}{width=0.55\textwidth}
+
+\SweaveOpts{eps=FALSE}
+
+\begin{document}
+<<echo=FALSE>>=
+options(width=75)
+set.seed(0)
+library(Rchemcpp)
+RchemcppVersion <- packageDescription("Rchemcpp")$Version
+@
+\newcommand{\RchemcppVersion}{\Sexpr{RchemcppVersion}}
+\manualtitlepage[Version \RchemcppVersion, \today]
+
+
+\vspace{1cm}
+
+\newlength{\auxparskip}
+\setlength{\auxparskip}{\parskip}
+\setlength{\parskip}{0pt}
+\tableofcontents
+\clearpage
+\setlength{\parskip}{\auxparskip}
+
+\newlength{\Nboxwidth}
+\setlength{\Nboxwidth}{\textwidth}
+\addtolength{\Nboxwidth}{-2\fboxrule}
+\addtolength{\Nboxwidth}{-2\fboxsep}
+
+\newcommand{\notebox}[1]{%
+\begin{center}
+\fbox{\begin{minipage}{\Nboxwidth}
+\noindent{\sffamily\bfseries Note:} #1
+\end{minipage}}
+\end{center}}
+
+\section{Introduction}
+
+The \Rchemcpp\ package implements functions that compute similarities between
+small drug-like molecules. Similarity measures for compounds are highly relevant
+since they offer the possibility to find chemical clusters or to build models
+that predict the biological activities and responses of a new drug. Further a 
+database can be screened for structural analogs to given lead compound. This is
+also crucial in drug-design.
+This package extends the functionality of the {\tt ChemmineR} Bioconductor 
+package using the functions and data structures that are introduced there, such
+as the reading of molecule structures from SDF files and handling them as
+S4 objects in \R.
+
+The following similarity functions/kernels are implemented:
+\begin{itemize}
+\item the marginalized graph kernel between labeled graphs \citep{Kashima2004}.
+\item extensions of the marginalized kernel \citep{Mahe2004}.
+\item Tanimoto kernels \citep{Ralaivola2005}.
+\item graph kernels based on tree patterns \citep{Mahe2009a}.
+\item kernels based on pharmacophores for 3D structure of molecules \citep{Mahe2006}.
+\end{itemize}
+
+See \url{http://www.bioinf.jku.at/software/Rchemcpp/} for additional
+information. A web-service for finding structural analogs using \Rchemcpp\ is
+available at \url{http://www.bioinf.jku.at/services/analoging/}.
+
+\section{Getting started and quick start}
+
+To load the package, enter the following in your \R\ session:
+<<>>=
+library(Rchemcpp)
+@
+
+We enter the filename of and SDF file to the function {\tt sd2gram}. This function
+computes the similarity of the molecules with the marginalized kernel 
+\citep{Kashima2004} approach.\\
+
+<<results=hide>>=
+sdfolder <- system.file("extdata",package="Rchemcpp")
+sdf <- list.files(sdfolder,full.names=TRUE,pattern="small")
+K <- sd2gram(sdf)
+@
+
+The similarity values are now stored in {\tt K}. We visualize this matrix as
+a heatmap.
+
+<<eval=FALSE>>=
+heatmap(K,Rowv=NA,Colv=NA,scale="none")
+@
+
+
+<<fig=FALSE,echo=FALSE,results=hide>>=
+pdf("001.pdf")
+heatmap(K,Rowv=NA,Colv=NA,scale="none",margins=c(12,12))
+dev.off()
+@
+
+\begin{figure}[htp]
+\begin{center}
+\includegraphics[width=0.6\columnwidth]{001.pdf}
+\end{center}
+\end{figure} 
+
+
+
+\newpage
+
+\section{Molecular similarity for clustering}
+Based on the similarity measure we can run clustering algorithms on the data
+in order to find groups among the molecules. We use Affinity Propagation 
+Clustering \citep{Frey2007} as implemented by \citet{Bodenhofer2011} 
+for this task, because the cluster centers are real molecules. 
+
+<<>>=
+library(apcluster)
+r <- apcluster(K)
+@
+
+
+<<eval=FALSE>>=
+heatmap(r,K)
+@
+
+<<fig=FALSE,echo=FALSE,results=hide>>=
+pdf("002.pdf")
+heatmap(r,K,margins=c(12,12))
+dev.off()
+@
+
+\begin{figure}[htp]
+\begin{center}
+\includegraphics[width=0.9\columnwidth]{002.pdf}
+\end{center}
+\end{figure} 
+
+
+\section{Molecular similarity for prediction of chromosome aberration}
+
+The similarity measures can be used for building models to predict features of
+the molecules, for example with the help of Support Vector Machines (SVMs). 
+\citet{Mohr2010} used this approach to predict the Ames test
+\citep{Mortelmans2000}, that tests whether a compound leads to chromosome 
+aberration. The authors put together a data set of 940 compounds with known 
+results of the Ames test. This data set is included in this package.
+
+<<results=hide>>=
+library(kernlab)
+chromosomeAberrationDataSet <- list.files(sdfolder,
+		full.names=TRUE,pattern="Mohr.sdf")
+KCA <- sd2gramSpectrum(chromosomeAberrationDataSet,
+		detectArom=FALSE,depthMax=4,silentMode=TRUE)
+response <- getMoleculePropertyFromSDF(chromosomeAberrationDataSet,
+		"chromosome_damage")
+# C was set to 0.1 for computational speed - should be set to a higher value
+model <- ksvm(KCA,y=as.factor(response),kernel="matrix",cross=10,type="C-svc",C=0.1)
+@
+
+An estimated accuracy of the prediction is
+<<>>=
+print(1-model@cross)
+@
+
+With this model we can predict whether a certain molecule will be positive 
+in the Ames test
+<<>>=
+predict(model,as.kernelMatrix(KCA[3,SVindex(model),drop=FALSE]))
+@
+
+
+\section{Working with SDFset objects from the package ChemmineR}
+In the {\tt ChemmineR} package {\tt SDFset} objects are defined, that make 
+the handling of molecules in \R\ easy and provide a lot of utility functions,
+like plotting.
+
+<<fig=TRUE>>=
+sdfFileName <- list.files(sdfolder,full.names=TRUE,pattern="small")
+sdfSet <- read.SDFset(sdfFileName)
+plot(sdfSet[2],print=FALSE)
+@
+
+It is possible to run the molecule kernels directly on {\tt SDFset} objects.
+<<>>=
+K1 <- sd2gramSubtree(sdfSet,silentMode=TRUE)
+@
+
+\section{Compound Screening: Comparing one compound against a data set}
+
+Comparing the objects in one set (lead compound) to the objects in another set
+(database of compounds) is possible.
+<<>>=
+leadCompound <- sdfSet[1]
+compoundDataBase <- sdfSet[1:20]
+K2 <- sd2gramSubtree(leadCompound,compoundDataBase,silentMode=TRUE)
+@
+
+
+\section{Graph kernels}
+These kernels are based on sets of molecular fragments. Molecular fragments 
+can be either {\em walks}, i.e. a sequence of atoms 
+connected by bonds, or {\em subtrees}, i.e. directed tree-patterns. A molecule
+is represented as graph. If we consider 
+two molecules as graphs $X$ and $Y$, then the kernel $K$ is:
+\begin{align}
+K(X,Y)=\sum_{p\in \mathcal{P}} N(p,X) \cdot N(p,Y),
+\end{align}
+
+where $\mathcal{P}$ is the set of molecular fragments (all possible walks or
+subtrees, and the function $N(p,X)$ usually (e.g. for the spectrum kernel \ref{s:spectrum})
+counts, how often the pattern $p$ occurs in molecule graph $X$. The function
+$N(p,X)$ will be defined for the different kernel types in the following.
+
+Kernel similarity measures can be normalized to values between 0 and 1. 
+Usually the following kernel normalization is used
+ \begin{align}
+    K_{\rm norm}(X,Y)=\frac{K(X,Y)}{\sqrt{K(X,X) \cdot K(Y,Y)}}.
+  \end{align}
+  
+
+\subsection{Implementation}
+Graph kernels are efficiently implemented in {\tt Chemcpp}\citep{Mahe2007b} or its {\tt R} interface 
+\Rchemcpp\ \citep{Mahr2012}.
+
+\begin{itemize}
+ \item {\bf sd2gram} Implements the marginalized kernel \ref{s:marginalized}.
+ \item {\bf sd2gramSpectrum} Implements the spectrum kernel \ref{s:spectrum},
+ the Tanimoto kernel \ref{s:tanimoto}, the MinMax kernel \ref{s:minmax}, 
+ the lambda-k kernel \ref{s:lambdak} and the
+ approximation of the marginalized kernel \ref{s:marginalizedapprox}.
+ \item {\bf sd2gramSubtree} Implements the subtree kernel \ref{s:subtree}.
+\end{itemize}
+
+For all these kernels the set of molecular fragments are non-tottering walks of
+or up to a certain length $n$ given by the {\tt depthMax} parameter. With the
+option {\tt onlyDepthMax=FALSE} all molecular fragments up to a length of $n$
+atoms/vertices are in the set $\mathcal{P}$, if {\tt onlyDepthMax=TRUE} only
+molecular fragments with $n$ atoms/vertices are in the set $\mathcal{P}$. 
+For all kernels there is a parameter {\tt returnNormalized} that scales the 
+similarity measures to values between 0 and 1.
+
+
+
+\subsection{The Spectrum Kernel}
+\label{s:spectrum}
+Here the function $N(p,X)$ counts how often the
+  walk $p$ occurs in the graph $X$. The kernel is
+  \begin{align}
+ K(X,Y)=\sum_{p\in \mathcal{P}} N(p,X) \cdot N(p,Y),
+ \end{align}
+ with 
+  \begin{align}
+    N(p,X)=\#\{p \in X \}.
+  \end{align}
+  For simplicity we denote a function $\#$ that the number of occurences of walk
+  $p$ in graph $X$.
+  The normalized version of this kernel is:
+  \begin{align}
+    K_{\rm norm}(X,Y)=\frac{K(X,Y)}{\sqrt{K(X,X) \cdot K(Y,Y)}}
+  \end{align}
+  
+\subsection{The Tanimoto Kernel}
+\label{s:tanimoto}
+
+Here the function $N(p,X)$ indicates whether
+  walk $p$ occurs in the graph $X$. 
+  The kernel is
+  \begin{align}
+ K(X,Y)=\sum_{p\in \mathcal{P}} N(p,X) \cdot N(p,Y),
+ \end{align}
+ with 
+  \begin{align}
+    N(p,X)=\mathbf{1}\{p \in X \}.
+  \end{align}
+  For simplicity we denote an indicator function $\mathbf{1}$ that is one if the walk
+  $p$ occurs in the graph $X$ and is zero otherwise.
+   What is usually considered as the Tanimoto kernel \citep{Ralaivola2005} is the normalized version:
+  \begin{align}
+    K_{\rm Tanimoto}(X,Y)=\frac{K(X,Y)}{K(X,X)+K(Y,Y)-K(X,Y)}.
+  \end{align}
+  
+  
+\subsection{The MinMax Kernel}
+\label{s:minmax}
+
+This kernel \citep{Ralaivola2005} is a variation of the kernel
+    presented above. Here the function $N(p,X)$ counts how often the
+  walk $p$ occurs in the graph $X$.
+  \begin{align}
+      K_{\rm max}(X,Y)=\sum_{p\in \mathcal{P}} \max(N(p,X),N(p,Y)), \\
+      K_{\rm min}(X,Y)=\sum_{p\in \mathcal{P}} \min(N(p,X),N(p,Y)) \\
+  \end{align}
+   with 
+   \begin{align}
+    N(p,X)=\#\{p \in X \}
+   \end{align}
+ the number of occurences of walk $p$ in the 
+   graph $X$. The MinMax kernel is the already a normalized version:
+  \begin{align}
+    K_{\rm minmax}(X,Y)=\frac{K_{\rm min}(X,Y)}{K_{\rm max}(X,Y)}.
+  \end{align}
+
+\subsection{The Marginalized Kernel}
+\label{s:marginalized}
+
+  The marginalized kernel suggested by \citet{Kashima2003, Kashima2004} .
+  Here the function $N(p,X)$ counts how often the walk $p$ occurs in the graph
+  $X$ and weights it by the probability that it occurs. The kernel is
+  \begin{align}
+  \label{eq:marg}
+ K(X,Y)=\sum_{p\in \mathcal{P}} N(p,X) \cdot N(p,Y),
+ \end{align}
+ with 
+  \begin{align}
+          N(p,X)=\sum_{h\in \mathcal{H(X)}}  w(h,X)\cdot  \mathbf{1}(h=p),
+  \end{align}
+   where $\mathcal{H(X)}$ is the set of walks of graph $X$, and $w(h,X)$ is
+   the probability that the walk $h$ occurs in $X$. This probability is
+   influenced by the stopping probability (parameter {\tt stopP}). The indicator
+   function $\mathbf{1}(h=p)$ is one if the atoms and bonds of the walk $h$ 
+   match the given walk $p$. The sum in Eq.~\ref{eq:marg} is a sum over an infinite
+   number of walks. However, the probability of a walk decreases exponentially
+   with its length, therefore the kernel converges.
+
+\subsection{The Marginalized Kernel Approximation}
+\label{s:marginalizedapprox}
+
+This is an approximation of 
+  the marginalized kernel \citep{Kashima2003,Kashima2004} presented above, but
+  the set of walks here is finite, since the length of the walks is bounded by
+  $n$.
+  Here the function $N(p,X)$ counts how often the walk $p$ occurs in the graph
+  $X$ and weights it by the probability that it occurs. The kernel is
+  \begin{align}
+ K(X,Y)=\sum_{p\in \mathcal{P}} N(p,X) \cdot N(p,Y),
+ \end{align}
+ with 
+  \begin{align}
+          N(p,X)=\sum_{h\in \mathcal{H(X)}}  w(h,X)\cdot  \mathbf{1}(h=p),
+  \end{align}
+   where $\mathcal{H(X)}$ is the set of walks of graph $X$, and $w(h,X)$ is
+   the probability that the walk $h$ occurs in $X$. This probability is
+   influenced by the stopping probability (parameter {\tt stopP}). The indicator
+   function $\mathbf{1}(h=p)$ is one if the atoms and bonds of the walk $h$ 
+   match the given walk $p$.
+   
+   Because the length of the walks is limited by the parameter $n$, this is
+   only an approximation of the marginalized kernel. Note that because of the 
+   random walk process, the probabilities of the walkds exponentially decrease
+   with their lengths. Long walks are barely taken into account in the marginalized
+   kernel formulation. 
+     The normalized version of this kernel is:
+  \begin{align}
+    K_{\rm norm}(X,Y)=\frac{K(X,Y)}{\sqrt{K(X,X) \cdot K(Y,Y)}}
+  \end{align}
+  
+  
+\subsection{The Lambda-k Kernel}
+\label{s:lambdak}
+
+  Here the function $N(p,X)$ counts how often the walk $p$ occurs in the graph
+  $X$ and weights it by a function of the length of the walk. The kernel is
+  \begin{align}
+ K(X,Y)=\sum_{p\in \mathcal{P}} N(p,X) \cdot N(p,Y),
+ \end{align}
+ with 
+  \begin{align}
+          N(p,X)=\lambda^{|p|} \cdot \#\{p \in X \}.
+  \end{align}
+   For simplicity we denote a function $\#$ that the number of occurences of walk
+  $p$ in graph $X$. For $\lambda=1$ this kernel corresponds exactly to the spectrum
+   kernel. For $\lambda > 1$ the influence of longer walks is higher, and for $\lambda < 1$ 
+   the similarity measure is more influenced by shorter walks.
+     The normalized version of this kernel is:
+  \begin{align}
+    K_{\rm norm}(X,Y)=\frac{K(X,Y)}{\sqrt{K(X,X) \cdot K(Y,Y)}}
+  \end{align}
+  
+\subsection{Efficiency of walk kernels}
+A walk of a graph $X=(V,E)$ with vertices $V$ and edges $E$ is a sequence $v_1,\ldots,v_n \in V$
+such that $(v_i,v_{i+1}) \in E$ for $i=1,\ldots,n-1$. This implementation mostly uses non-tottering
+walks, that is walks with $v_i \neq v_{i+2}$ or provides an option to remove tottering walks.
+We denote $\mathcal{H}_n(X)$ the set of walks of graph $X$ with length $n$.
+The computation of these kernels 
+is very efficient, since there is a bijection between the pairs of walks 
+$p \in \mathcal{H}_n(X)$ and $q \in  \mathcal{H}_n(Y)$ with the same label sequences and
+the walks on the product graph $r \in \mathcal{H}_n (X \times Y)$. Therefore we only have
+to count the walks with length $n$ on the product graph of X and Y. 
+
+The product graph between two labeled graphs $X=(V_X,E_X)$ and $Y=(V_Y,E_Y)$ is defined
+as the graph $Z=(V_{X\times Y},E_{X\times Y})$ with 
+\begin{align}
+ V_{X\times Y}&=\{(v_1,v_2)\in V_X \times X_Y:  l(v_x)=l(v_y) \} \\
+ E_{X\times Y}&=\{ \left( (v_1,v_2),(  v_1^\prime, v_2^\prime) \right) \in V_X \times X_Y 
+ : (v_1, v_1^\prime) \in X\  \text{and\ } (v_2, v_2^\prime) \in Y \},
+\end{align}
+
+where $l(v)$ denotes the label of the vertex $v$. For a graphical explanation 
+of the definition of the producte graph, see Fig.~\ref{fig:productgraph}.
+
+
+\begin{figure}
+  \centering
+ \includegraphics[width=0.8\columnwidth]{Figures/productgraph.png}
+ \label{fig:productgraph}
+ \caption{An example for a product graph. Figure taken from \citet{Vert2007Presentation}.}
+\end{figure}
+
+
+\subsection{The Subtree Kernel}
+\label{s:subtree}
+This graph kernel is  based on the detection of common subtrees: the
+so-called tree-pattern graph kernels, originally introduced in \citep{Ramon2003}, and revisited 
+in \citep{Mahe2006}. For more details on the kernel definitions please refer to \citep{Mahe2006}. 
+The size of the trees can either be bounded by the size of the tree (number of atoms) or 
+the number of branches. Both trees of a given length and up to a given length can be used 
+for the calculation of the kernel.
+
+\section{The Pharmacophore Kernel}
+The pharmacophore kernel is based on the 3D structure of molecules \citep{Mahe2006}.
+The kernels are based on the comparison of the three-point pharmacophores 
+present in the 3D structures of molecules, a set of molecular features known to 
+be particularly relevant for virtual screening applications.  
+There is a computationally demanding exact implementation of
+these kernels, as well as fast approximations related to the classical fingerprint-based
+approaches. 
+
+\begin{itemize}
+ \item {\bf sd2gram3Dpharma} Implements the exact pharmacophore kernel.
+ \item {\bf sd2gram3Dspectrum} Implements some approximations of the pharmacophore
+ kernel.
+\end{itemize}
+
+
+
+
+
+\section{How to cite this package}
+
+If you use this package for research that is published later, you are kindly
+asked to cite it as follows: \citep{Mahr2012}.
+
+To obtain Bib\TeX\ entries of the reference, you can enter the following
+into your R session:
+<<eval=FALSE>>=
+toBibtex(citation("Rchemcpp"))
+@ 
+
+\bibliographystyle{natbib}
+\bibliography{literature}
+
+
+\end{document}

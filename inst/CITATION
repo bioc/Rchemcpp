@@ -1,0 +1,32 @@
+citHeader("To cite package 'Rchemcpp' in publications use:")
+
+desc <- packageDescription("Rchemcpp")
+year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", desc$Date)
+vers <- paste("R package version", desc$Version)
+url  <- desc$URL
+
+citEntry(entry="Article",
+         title="Rchemcpp: An R package for computing the similarity of molecules",
+         author=personList(as.person("Michael Mahr"),
+                           as.person("Guenter Klambauer"),
+                           as.person("Sepp Hochreiter") 
+                           ),
+         year=year,
+         note=vers,
+         journal="Unpublished",
+         organization=paste("Institute of Bioinformatics",
+                            "Johannes Kepler University", sep=", "),
+         address="Linz, Austria",
+         url=url,
+         textVersion =
+             paste("Michael Mahr, Guenter Klambauer, and Sepp Hochreiter (",
+                   year, 
+                   "). Rchemcpp: An R package for computing the similarity of molecules",
+                   "Rchemcpp. ", 
+                   vers,
+                   ". Institute of Bioinformatics, ",
+                   "Johannes Kepler University, Linz, Austria.",
+                   sep=""))
+                   
+citFooter("To obtain the references in BibTex format, enter",
+          "'toBibtex(citation(\"Rchemcpp\"))'")
