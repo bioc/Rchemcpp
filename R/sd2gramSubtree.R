@@ -84,12 +84,18 @@ sd2gramSubtree = function(sdf, sdf2,
 	
 	
 	if(inherits(sdf,"SDFset")){
+		datablock(sdf) <- lapply(1:length(sdf),function(x) return(""))
+		
 		aSet <- SDFsetToRmoleculeset(sdf,detectArom=detectArom)[[1]]
+		
 		molnames <- ChemmineR::sdfid(sdf)
 		molnames2 <- molnames
 		if (!missing(sdf2)){
 			if (inherits(sdf2,"SDFset")){
+				datablock(sdf2) <- lapply(1:length(sdf2),function(x) return(""))
+				
 				aSet2 <- SDFsetToRmoleculeset(sdf2,detectArom=detectArom)[[1]]
+				
 				molnames2 <- ChemmineR::sdfid(sdf2)
 			} else 
 				stop("Input must be existing SDF files or \"SDFset\" objects.")	

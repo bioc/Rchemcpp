@@ -29,8 +29,8 @@ readRmoleculeset <- function(sdfFileName, detectArom=TRUE, bound=Inf, type=2){
 	sdf <- ChemmineR::read.SDFset(sdfFileName)
 	valids <- ChemmineR::validSDF(sdf)
 	if (!(all(valids))){
-		warnings("Found invalid entries in the sdf file. Removing.")
-		sdf <- sdf[which(valids)]
+		warnings("Found invalid entries in the sdf file. Suggested to remove.")
+		#sdf <- sdf[which(valids)]
 	}
 	molNames <- ChemmineR::sdfid(sdf)
 	
@@ -155,8 +155,8 @@ SDFsetToRmoleculeset <- function(SDFset, detectArom=TRUE, bound=70, type=2){
 	
 	valids <- ChemmineR::validSDF(SDFset)
 	if (!(all(valids))){
-		warnings("Found invalid entries in the sdf file. Removing.")
-		SDFset <- SDFset[which(valids)]
+		warnings("Found invalid entries in the sdf file. Suggested to remove.")
+		#SDFset <- SDFset[which(valids)]
 	}
 	molNames <- ChemmineR::sdfid(SDFset)
 	
