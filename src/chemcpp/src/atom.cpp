@@ -661,7 +661,7 @@ void Atom::setPerretLabel() throw( CError ){
 			(*bi).second->setPerretLabel();
 		}
 	}catch( CError e ){
-		CError e(NOTCALCULATED, "Atom::setPerretLabel: ring membership was not calculated, please use Molecule::setectSSSR before calling Molecule::setPerretLabel");
+		CError f(NOTCALCULATED, "Atom::setPerretLabel: ring membership was not calculated, please use Molecule::setectSSSR before calling Molecule::setPerretLabel");
 		e.describe();
 		throw(e);
 	}
