@@ -200,6 +200,7 @@ the handling of molecules in \R\ easy and provide a lot of utility functions,
 like plotting.
 
 <<fig=TRUE>>=
+library(ChemmineR)
 sdfFileName <- list.files(sdfolder,full.names=TRUE,pattern="small")
 sdfSet <- read.SDFset(sdfFileName)
 plot(sdfSet[2],print=FALSE)

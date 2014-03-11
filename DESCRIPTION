@@ -1,8 +1,8 @@
 Package: Rchemcpp
 Type: Package
 Title: Similarity measures for chemical compounds
-Version: 2.1.4
-Date: 2013-11-05
+Version: 2.1.5
+Date: 2013-03-05
 Author: Michael Mahr, Guenter Klambauer
 Maintainer: Guenter Klambauer <klambauer@bioinf.jku.at>
 Description: The Rchemcpp package implements the marginalized graph
@@ -11,7 +11,8 @@ Description: The Rchemcpp package implements the marginalized graph
         similarity of molecules.
 License: GPL (>= 2.1)
 URL: http://www.bioinf.jku.at/software/Rchemcpp
-Depends: Rcpp (>= 0.9.13), R (>= 2.15.0), methods, ChemmineR
+Depends: R (>= 2.15.0)
+Imports: Rcpp (>= 0.10.0), methods, ChemmineR
 Suggests: apcluster, kernlab
 LinkingTo: Rcpp
 RcppModules: Rmolecule, Rmoleculeset, Relements, spectrumhelper,
