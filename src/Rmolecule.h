@@ -98,7 +98,7 @@ public:
 	void deleteStringDescriptor(string aLabel)
 	{
 		//Code taken from datacontainer.cpp (corrected bug: Original function deletes all types of descriptors with that label)
-		map<const string, Descriptor<string>* >::iterator its;
+		map<string, Descriptor<string>* >::iterator its;
 		for( its = (stringDescriptors).begin(); its != (stringDescriptors).end(); its++ ){
 			if( (*its).first == aLabel ){
 				delete (*its).second;

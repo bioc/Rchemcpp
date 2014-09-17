@@ -91,7 +91,7 @@ DataContainer::DataContainer( DataContainer& aDataContainer ){
 		cout << "copying all non kind descriptors" << endl;
 	#endif
 
-	map<const string, Descriptor<int>* >::iterator iti;
+	map<string, Descriptor<int>* >::iterator iti;
 	int i = 0;
 	//cout << "  int" << endl;
 	//cout << (aDataContainer).intDescriptors.size() << endl;
@@ -127,7 +127,7 @@ DataContainer::DataContainer( DataContainer& aDataContainer ){
 		cout << "  float" << endl;
 		cout << (aDataContainer).floatDescriptors.size() << endl;
 	#endif
-	map<const string, Descriptor<float>* >::iterator itf;
+	map<string, Descriptor<float>* >::iterator itf;
 	for( itf = (aDataContainer).floatDescriptors.begin(); itf != (aDataContainer).floatDescriptors.end(); itf++ ){
 			//cout << i << endl;
 			i++;
@@ -155,7 +155,7 @@ DataContainer::DataContainer( DataContainer& aDataContainer ){
 		cout << "float done" << endl;
 	#endif
 	
-	map<const string, Descriptor<string>* >::iterator its;
+	map<string, Descriptor<string>* >::iterator its;
 	for( its = aDataContainer.stringDescriptors.begin(); its != aDataContainer.stringDescriptors.end(); its++ ){
 			//cout << i << endl;
 			i++;
@@ -340,9 +340,9 @@ Descriptor< string >* DataContainer::setStringDescriptor(string aLabel, string a
 
 /** write a only descriptors of the data container to cout (not Kind descriptors) */
 void DataContainer::describeShort() throw( CError ) {
-	map<const string, Descriptor<string>* >::iterator its;
-  map<const string, Descriptor<int>* >::iterator iti;
-  map<const string, Descriptor<float>* >::iterator itf;
+	map<string, Descriptor<string>* >::iterator its;
+	map<string, Descriptor<int>* >::iterator iti;
+	map<string, Descriptor<float>* >::iterator itf;
 
 	// first write string descriptors
 	for( its = stringDescriptors.begin(); its != (stringDescriptors).end(); its++ ){
@@ -367,20 +367,20 @@ void DataContainer::describe() throw( CError ) {
 	cout << "KIND DESCRIPTORS:" << endl;
 	cout << "string kindDescriptors:" << endl;
 	// first write string kindDescriptors
-	map<const string, Descriptor<string>* >::iterator its;
+	map<string, Descriptor<string>* >::iterator its;
 	for( its = (*kindStringDescriptors).begin(); its != (*kindStringDescriptors).end(); its++ ){
 	  (*its).second->describe();
 	}
 
 	cout << "int kindDescriptors:" << endl;
 	// then write integer kindDescriptors 
-  map<const string, Descriptor<int>* >::iterator iti;
+	map<string, Descriptor<int>* >::iterator iti;
 	for( iti = (*kindIntDescriptors).begin(); iti != (*kindIntDescriptors).end(); iti++ ){
 		(*iti).second->describe();
 	}
 	cout << "float kindDescriptors" << endl;
 	// finally write float kindDescriptors
-	map<const string, Descriptor<float>* >::iterator itf;
+	map<string, Descriptor<float>* >::iterator itf;
   for( itf = (*kindFloatDescriptors).begin(); itf != (*kindFloatDescriptors).end(); itf++ ){
 		(*itf).second->describe();
 	}
@@ -464,7 +464,7 @@ long DataContainer::getPossibleValuesInIntDescriptor( string aDescriptorName, ve
 		aDescriptorName = aDescriptorName.substr( 0, aDescriptorName.size() - 8 );
 	}
 
-	map< const string, Descriptor<int>* >::iterator iti;
+	map<string, Descriptor<int>* >::iterator iti;
 	int i = 0;
 	for( iti = intDescriptors.begin(); iti != intDescriptors.end(); iti++ ){
 		if( (*iti).second->getLabel() == aDescriptorName ){
@@ -580,7 +580,7 @@ Descriptor< float >* DataContainer::getFloatDescriptor( string aLabel, bool sile
 bool DataContainer::deleteDescriptor( string aLabel, bool found ){
 
 	// first check for the descriptor among the int descriptors
-	map<const string, Descriptor<int>* >::iterator iti;
+	map<string, Descriptor<int>* >::iterator iti;
 	for( iti = (intDescriptors).begin(); iti != (intDescriptors).end(); iti++ ){
 	if( (*iti).first == aLabel ){
 			#ifdef DEBUG
@@ -594,7 +594,7 @@ bool DataContainer::deleteDescriptor( string aLabel, bool found ){
 	}
 
 	 // then check for the descriptor among the float descriptors
-	map<const string, Descriptor<float>* >::iterator itf;
+	map<string, Descriptor<float>* >::iterator itf;
 	for( itf = (floatDescriptors).begin(); itf != (floatDescriptors).end(); itf++ ){
 	if( (*itf).first == aLabel ){
 			#ifdef DEBUG
@@ -608,7 +608,7 @@ bool DataContainer::deleteDescriptor( string aLabel, bool found ){
 	}
 
 	 // finally check for the descriptor among the string descriptors
-	map<const string, Descriptor<string>* >::iterator its;
+	map<string, Descriptor<string>* >::iterator its;
 	for( its = (stringDescriptors).begin(); its != (stringDescriptors).end(); its++ ){
 	if( (*its).first == aLabel ){
 			#ifdef DEBUG
@@ -630,7 +630,7 @@ void DataContainer::deleteAllDescriptors(){
 	#ifdef DEBUG
 		int i = 0;
 	#endif
-	map<const string, Descriptor<int>* >::iterator iti;
+	map<string, Descriptor<int>* >::iterator iti;
 	for( iti = intDescriptors.begin(); iti != intDescriptors.end(); iti++ ){
 			#ifdef DEBUG
 				cout << "deleting int descriptor [ " << (*iti).second->toString() << "]" << endl;
@@ -642,7 +642,7 @@ void DataContainer::deleteAllDescriptors(){
 	intDescriptors.clear();
 
 	// then delete float descriptors
-	map<const string, Descriptor<float>* >::iterator itf;
+	map<string, Descriptor<float>* >::iterator itf;
 	for( itf = floatDescriptors.begin(); itf != floatDescriptors.end(); itf++ ){
 			#ifdef DEBUG
 				cout << "deleting float descriptor [ " << (*itf).second->toString() << "]" << endl;
@@ -654,7 +654,7 @@ void DataContainer::deleteAllDescriptors(){
 	floatDescriptors.clear();
 
 	// finally delete string descriptors
-	map<const string, Descriptor<string>* >::iterator its;
+	map<string, Descriptor<string>* >::iterator its;
 	for( its = stringDescriptors.begin(); its != stringDescriptors.end(); its++ ){
 			#ifdef DEBUG
 				cout << "deleting string descriptor [ " << (*its).second->toString() << "]" << endl;
@@ -679,7 +679,7 @@ void DataContainer::deleteAllKindDescriptors(){
 		cout << "DataContainer::deleteAllKindDescriptors" << endl;
 	#endif
 	int i = 0;
-	map<const string, Descriptor<int>* >::iterator iti;
+	map<string, Descriptor<int>* >::iterator iti;
 	for( iti = (kindIntDescriptors)->begin(); iti != (kindIntDescriptors)->end(); iti++ ){
 			#ifdef DEBUG
 				cout << "deleting kindInt descriptor [ " << (*iti).second->toString() << "]" << endl;
@@ -691,7 +691,7 @@ void DataContainer::deleteAllKindDescriptors(){
 	kindIntDescriptors->clear();
 
 	// then delete float descriptors
-	map<const string, Descriptor<float>* >::iterator itf;
+	map<string, Descriptor<float>* >::iterator itf;
 	for( itf = (kindFloatDescriptors)->begin(); itf != (kindFloatDescriptors)->end(); itf++ ){
 			#ifdef DEBUG
 				cout << "deleting kindFloat descriptor [ " << (*itf).second->toString() << "]" << endl;
@@ -703,7 +703,7 @@ void DataContainer::deleteAllKindDescriptors(){
 	kindFloatDescriptors->clear();
 
 	// finally delete string descriptors
-	map<const string, Descriptor<string>* >::iterator its;
+	map<string, Descriptor<string>* >::iterator its;
 	for( its = (kindStringDescriptors)->begin(); its != (kindStringDescriptors)->end(); its++ ){
 			#ifdef DEBUG
 				cout << "deleting kindString descriptor [ " << (*its).second->toString() << "]" << endl;

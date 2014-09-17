@@ -149,7 +149,7 @@ Molecule::Molecule( Molecule& aMolecule , bool bool_resetMorganIndex ) : DataCon
 	}
 
 	// copy int descriptors
-	map<const string, Descriptor<int>* >::iterator dii;
+	map<string, Descriptor<int>* >::iterator dii;
 	for( dii = aMolecule.beginIntDescriptor(); dii != aMolecule.endIntDescriptor(); dii++ ){
 		if( (*dii).second->isEmpty() ){
 			Descriptor<int>* d = addIntDescriptor(
@@ -169,7 +169,7 @@ Molecule::Molecule( Molecule& aMolecule , bool bool_resetMorganIndex ) : DataCon
 	}
 
 	// copy float descriptors
-	map<const string, Descriptor<float>* >::iterator dif;
+	map<string, Descriptor<float>* >::iterator dif;
 	for( dif = aMolecule.beginFloatDescriptor(); dif != aMolecule.endFloatDescriptor(); dif++ ){
 		if( (*dif).second->isEmpty() ){
 			Descriptor<float>* d = addFloatDescriptor(
@@ -190,7 +190,7 @@ Molecule::Molecule( Molecule& aMolecule , bool bool_resetMorganIndex ) : DataCon
 	}
 
 	// copy string descriptors
-	map<const string, Descriptor<string>* >::iterator dis;
+	map<string, Descriptor<string>* >::iterator dis;
 	for( dis = aMolecule.beginStringDescriptor(); dis != aMolecule.endStringDescriptor(); dis++ ){
 		if( (*dis).second->isEmpty() ){
 			Descriptor<string>* d = addStringDescriptor(
@@ -640,15 +640,15 @@ Molecule& Molecule::operator=( const Molecule& aMolecule ) {
 		// Copy all non kind descriptors
 		// first copy int descriptors
 
-		map<const string, Descriptor<int>* >::iterator iti;
+		map<string, Descriptor<int>* >::iterator iti;
 		for( iti = (intDescriptors).begin(); iti != (intDescriptors).end(); iti++ ){
 				addIntDescriptor( (*iti).second->getLabel() , (*iti).second->getValue(), (*iti).second->getUnit(), (*iti).second->getComment() );
 		}
-		map<const string, Descriptor<float>* >::iterator itf;
+		map<string, Descriptor<float>* >::iterator itf;
 		for( itf = (floatDescriptors).begin(); itf != (floatDescriptors).end(); itf++ ){
 				addFloatDescriptor( (*itf).second->getLabel() , (*itf).second->getValue(), (*itf).second->getUnit(), (*itf).second->getComment() );
 		}
-		map<const string, Descriptor<string>* >::iterator its;
+		map<string, Descriptor<string>* >::iterator its;
 		for( its = (stringDescriptors).begin(); its != (stringDescriptors).end(); its++ ){
 				addStringDescriptor( (*its).second->getLabel() , (*its).second->getValue(), (*its).second->getUnit(), (*its).second->getComment() );
 		}
