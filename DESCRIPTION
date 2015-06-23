@@ -1,8 +1,8 @@
 Package: Rchemcpp
 Type: Package
 Title: Similarity measures for chemical compounds
-Version: 2.7.0
-Date: 2015-04-01
+Version: 2.7.1
+Date: 2015-06-23
 Author: Michael Mahr, Guenter Klambauer
 Maintainer: Guenter Klambauer <klambauer@bioinf.jku.at>
 Description: The Rchemcpp package implements the marginalized graph
