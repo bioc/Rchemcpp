@@ -1,32 +1,30 @@
 citHeader("To cite package 'Rchemcpp' in publications use:")
 
 desc <- packageDescription("Rchemcpp")
-year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", desc$Date)
 vers <- paste("R package version", desc$Version)
 url  <- desc$URL
 
 citEntry(entry="Article",
-         title="Rchemcpp: An R package for computing the similarity of molecules",
-         author=personList(as.person("Michael Mahr"),
-                           as.person("Guenter Klambauer"),
+         title="Rchemcpp: a web service for structural analoging in ChEMBL, Drugbank and the Connectivity Map",
+         author=personList(as.person("Guenter Klambauer"),
+                           as.person("Martin Wischenbart"),
+                           as.person("Michael Mahr"),
+                           as.person("Thomas Unterthiner"),
+                           as.person("Andreas Mayr"),
                            as.person("Sepp Hochreiter") 
                            ),
-         year=year,
-         note=vers,
-         journal="Unpublished",
+         year=2015,
+         doi="10.1093/bioinformatics/btv373",
+         url="http://bioinformatics.oxfordjournals.org/content/early/2015/06/17/bioinformatics.btv373.abstract",
+         eprint="http://bioinformatics.oxfordjournals.org/content/early/2015/06/17/bioinformatics.btv373.full.pdf+html",
+         journal="Bioinformatics",
          organization=paste("Institute of Bioinformatics",
                             "Johannes Kepler University", sep=", "),
          address="Linz, Austria",
          url=url,
-         textVersion =
-             paste("Michael Mahr, Guenter Klambauer, and Sepp Hochreiter (",
-                   year, 
-                   "). Rchemcpp: An R package for computing the similarity of molecules",
-                   "Rchemcpp. ", 
-                   vers,
-                   ". Institute of Bioinformatics, ",
-                   "Johannes Kepler University, Linz, Austria.",
-                   sep=""))
+         textVersion = paste("Guenter Klambauer, Martin Wischenbart, Michael Mahr, Thomas Unterthiner, Andreas Mayr, and Sepp Hochreiter ",
+              		"(2015) Bioinformatics. DOI: 10.1093/bioinformatics/btv373.",sep="")
+         )
                    
 citFooter("To obtain the references in BibTex format, enter",
           "'toBibtex(citation(\"Rchemcpp\"))'")

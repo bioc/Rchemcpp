@@ -67,8 +67,8 @@ RchemcppVersion <- packageDescription("Rchemcpp")$Version
 
 \section{Introduction}
 
-The \Rchemcpp\ package implements functions that compute similarities between
-small drug-like molecules. Similarity measures for compounds are highly relevant
+The \Rchemcpp\ package \citep{Klambauer2015} implements functions that compute
+similarities between small drug-like molecules. Similarity measures for compounds are highly relevant
 since they offer the possibility to find chemical clusters or to build models
 that predict the biological activities and responses of a new drug. Further a 
 database can be screened for structural analogs to given lead compound. This is
@@ -246,7 +246,7 @@ Usually the following kernel normalization is used
 
 \subsection{Implementation}
 Graph kernels are efficiently implemented in {\tt Chemcpp}\citep{Mahe2007b} or its {\tt R} interface 
-\Rchemcpp\ \citep{Mahr2012}.
+\Rchemcpp\ \citep{Klambauer2015}.
 
 \begin{itemize}
  \item {\bf sd2gram} Implements the marginalized kernel \ref{s:marginalized}.
@@ -464,7 +464,7 @@ approaches.
 \section{How to cite this package}
 
 If you use this package for research that is published later, you are kindly
-asked to cite it as follows: \citep{Mahr2012}.
+asked to cite it as follows: \citep{Klambauer2015}.
 
 To obtain Bib\TeX\ entries of the reference, you can enter the following
 into your R session:
@@ -472,8 +472,112 @@ into your R session:
 toBibtex(citation("Rchemcpp"))
 @ 
 
-\bibliographystyle{natbib}
-\bibliography{literature}
+\tiny
+\begin{verbatim}
+@article{Klambauer2015,
+author = {Klambauer, Guenter and Wischenbart, Martin and Mahr, Michael and Unterthiner, Thomas and Mayr, Andreas and Hochreiter, Sepp}, 
+title = {Rchemcpp: a web service for structural analoging in ChEMBL, Drugbank and the Connectivity Map},
+year = {2015}, 
+doi = {10.1093/bioinformatics/btv373}, 
+URL = {http://bioinformatics.oxfordjournals.org/content/early/2015/06/17/bioinformatics.btv373.abstract}, 
+eprint = {http://bioinformatics.oxfordjournals.org/content/early/2015/06/17/bioinformatics.btv373.full.pdf+html}, 
+journal = {Bioinformatics} 
+}
+\end{verbatim}
+\normalsize
 
+
+\begin{thebibliography}{}
+
+\bibitem[Bodenhofer {\em et al.}(2011)Bodenhofer, Kothmeier, and
+  Hochreiter]{Bodenhofer2011}
+Bodenhofer, U., Kothmeier, A., and Hochreiter, S. (2011).
+\newblock {APCluster: an R package for affinity propagation clustering}.
+\newblock {\em Bioinformatics\/}, {\bf 27}, 2463--2464.
+
+\bibitem[Frey and Dueck(2007)Frey and Dueck]{Frey2007}
+Frey, B. J. and Dueck, D. (2007).
+\newblock Clustering by passing messages between data points.
+\newblock {\em Science\/}, {\bf 315}, 972--977.
+
+\bibitem[Kashima {\em et al.}(2003)Kashima, Tsuda, and Inokuchi]{Kashima2003}
+Kashima, H., Tsuda, K., and Inokuchi, A. (2003).
+\newblock Marginalized kernels between labeled graphs.
+\newblock In {\em Proceedings of the Twentieth International Conference on
+  Machine Learning\/}, pages 321--328. AAAI Press.
+
+\bibitem[Kashima {\em et al.}(2004)Kashima, Tsuda, and Inokuchi]{Kashima2004}
+Kashima, H., Tsuda, K., and Inokuchi, A. (2004).
+\newblock Kernels for graphs.
+\newblock In {\em Kernel Methods in Computational Biology\/}, pages 155--170.
+  MIT Press.
+
+\bibitem[Klambauer {\em et al.}(2015)Klambauer, Wischenbart, Mahr, Unterthiner,
+  Mayr, and Hochreiter]{Klambauer2015}
+Klambauer, G., Wischenbart, M., Mahr, M., Unterthiner, T., Mayr, A., and
+  Hochreiter, S. (2015).
+\newblock Rchemcpp: a web service for structural analoging in chembl, drugbank
+  and the connectivity map.
+\newblock {\em Bioinformatics\/}.
+
+\bibitem[Mah{\'e} and Vert(2009)Mah{\'e} and Vert]{Mahe2009a}
+Mah{\'e}, P. and Vert, J.-P. (2009).
+\newblock Graph kernels based on tree patterns for molecules.
+\newblock {\em Mach. Learn.}, {\bf 75}(1), 3--35.
+
+\bibitem[Mah{\'e} {\em et al.}(2004)Mah{\'e}, Ueda, Akutsu, Perret, and
+  Vert]{Mahe2004}
+Mah{\'e}, P., Ueda, N., Akutsu, T., Perret, J.-L., and Vert, J.-P. (2004).
+\newblock Extensions of marginalized graph kernels.
+\newblock In R. Greiner and D. Schuurmans, editors, {\em Proc of the 21st
+  {ICML}\/}, pages 552--559. ACM Press.
+
+\bibitem[Mah{\'e} {\em et al.}(2006)Mah{\'e}, Ralaivola, Stoven, and
+  Vert]{Mahe2006}
+Mah{\'e}, P., Ralaivola, L., Stoven, V., and Vert, J.-P. (2006).
+\newblock The pharmacophore kernel for virtual screening with support vector
+  machines.
+\newblock {\em J Chem Inf Model\/}, {\bf 46}(5), 2003--2014.
+
+\bibitem[Mah{\'e} {\em et al.}(2007)Mah{\'e}, Perret, Akutsu, and
+  Vert]{Mahe2007b}
+Mah{\'e}, P., Perret, J.-L., Akutsu, T., and Vert, J.-P. (2007).
+\newblock {Chemcpp: A C++ toolbox for chemoinformatics focusing on the
+  computation of kernel functions between chemical compounds}.
+\newblock {\em http://chemcpp.sourceforge.net/html/index.html\/}.
+
+\bibitem[Mohr {\em et al.}(2010)Mohr, Jain, Sutter, Laak, Steger-Hartmann,
+  Heinrich, and Obermayer]{Mohr2010}
+Mohr, J., Jain, B., Sutter, A., Laak, A. T., Steger-Hartmann, T., Heinrich, N.,
+  and Obermayer, K. (2010).
+\newblock A maximum common subgraph kernel method for predicting the chromosome
+  aberration test.
+\newblock {\em J Chem Inf Model\/}, {\bf 50}(10), 1821--1838.
+
+\bibitem[Mortelmans and Zeiger(2000)Mortelmans and Zeiger]{Mortelmans2000}
+Mortelmans, K. and Zeiger, E. (2000).
+\newblock The ames salmonella/microsome mutagenicity assay.
+\newblock {\em Mutation Research/Fundamental and Molecular Mechanisms of
+  Mutagenesis\/}, {\bf 455}(1), 29 -- 60.
+
+\bibitem[Ralaivola {\em et al.}(2005)Ralaivola, Swamidass, Saigo, and
+  Baldi]{Ralaivola2005}
+Ralaivola, L., Swamidass, S. J., Saigo, H., and Baldi, P. (2005).
+\newblock Graph kernels for chemical informatics.
+\newblock {\em Neural Netw\/}, {\bf 18}(8), 1093--1110.
+
+\bibitem[Ramon and G\"artner(2003)Ramon and G\"artner]{Ramon2003}
+Ramon, J. and G\"artner, T. (2003).
+\newblock Expressivity versus efficiency of graph kernels.
+\newblock In {\em Proceedings of the First International Workshop on Mining
+  Graphs, Trees and Sequences\/}, pages 65--74.
+
+\bibitem[Vert(2007)Vert]{Vert2007Presentation}
+Vert, J. P. (2007).
+\newblock Graph kernels and applications in chemoinformatics.
+\newblock In {\em {International Workshop on Graph-based Representations in
+  Pattern Recognition (Gbr 2007), Alicante, Spain, June 13, 2007}\/}.
+
+\end{thebibliography}
 
 \end{document}
