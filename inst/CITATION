@@ -1,8 +1,8 @@
 citHeader("To cite package 'Rchemcpp' in publications use:")
 
-desc <- packageDescription("Rchemcpp")
-vers <- paste("R package version", desc$Version)
-url  <- desc$URL
+if (!exists("meta") || is.null(meta))
+    meta <- packageDescription("Rchemcpp")
+url  <- meta$URL
 
 citEntry(entry="Article",
          title="Rchemcpp: a web service for structural analoging in ChEMBL, Drugbank and the Connectivity Map",
