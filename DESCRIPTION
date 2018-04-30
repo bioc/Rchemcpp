@@ -1,7 +1,7 @@
 Package: Rchemcpp
 Type: Package
 Title: Similarity measures for chemical compounds
-Version: 2.17.0
+Version: 2.18.0
 Date: 2015-06-23
 Author: Michael Mahr, Guenter Klambauer
 Maintainer: Guenter Klambauer <klambauer@bioinf.jku.at>
