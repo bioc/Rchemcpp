@@ -1,7 +1,7 @@
 Package: Rchemcpp
 Type: Package
 Title: Similarity measures for chemical compounds
-Version: 2.20.0
+Version: 2.20.1
 Date: 2015-06-23
 Author: Michael Mahr, Guenter Klambauer
 Maintainer: Guenter Klambauer <klambauer@bioinf.jku.at>
@@ -9,7 +9,7 @@ Description: The Rchemcpp package implements the marginalized graph
         kernel and extensions, Tanimoto kernels, graph kernels,
         pharmacophore and 3D kernels suggested for measuring the
         similarity of molecules.
-biocViews: Bioinformatics, CellBasedAssays, Clustering, DataImport,
+biocViews: ImmunoOncology, Bioinformatics, CellBasedAssays, Clustering, DataImport,
         Infrastructure, MicrotitrePlateAssay, Proteomics, Software,
         Visualization
 License: GPL (>= 2.1)
