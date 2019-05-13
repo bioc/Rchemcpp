@@ -1,7 +1,7 @@
 Package: Rchemcpp
 Type: Package
 Title: Similarity measures for chemical compounds
-Version: 2.23.0
+Version: 2.23.1
 Date: 2015-06-23
 Author: Michael Mahr, Guenter Klambauer
 Maintainer: Guenter Klambauer <klambauer@bioinf.jku.at>
@@ -24,3 +24,4 @@ RcppModules: Rmolecule, Rmoleculeset, Relements, spectrumhelper,
 Collate: 'getMoleculeNamesFromSDF.R' 'sd2gram3Dpharma.R'
         'sd2gram3Dspectrum.R' 'sd2gram.R' 'sd2gramSpectrum.R'
         'sd2gramSubtree.R' 'utility.R' 'zzz.R' 'roxygen.R' 'methods.R'
+PackageStatus: Deprecated
